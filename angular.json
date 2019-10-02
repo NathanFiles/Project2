@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "Project2ng": {
+    "ImageBoardNG": {
       "projectType": "application",
       "schematics": {},
       "root": "",
@@ -13,7 +13,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/Project2ng",
+            "outputPath": "dist/ImageBoardNG",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -63,18 +63,18 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "Project2ng:build"
+            "browserTarget": "ImageBoardNG:build"
           },
           "configurations": {
             "production": {
-              "browserTarget": "Project2ng:build:production"
+              "browserTarget": "ImageBoardNG:build:production"
             }
           }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "Project2ng:build"
+            "browserTarget": "ImageBoardNG:build"
           }
         },
         "test": {
@@ -111,15 +111,15 @@
           "builder": "@angular-devkit/build-angular:protractor",
           "options": {
             "protractorConfig": "e2e/protractor.conf.js",
-            "devServerTarget": "Project2ng:serve"
+            "devServerTarget": "ImageBoardNG:serve"
           },
           "configurations": {
             "production": {
-              "devServerTarget": "Project2ng:serve:production"
+              "devServerTarget": "ImageBoardNG:serve:production"
             }
           }
         }
       }
     }},
-  "defaultProject": "Project2ng"
+  "defaultProject": "ImageBoardNG"
 }

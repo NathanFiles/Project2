@@ -20,16 +20,16 @@ describe('AppComponent', () => {
     expect(app).toBeTruthy();
   });
 
-  it(`should have as title 'Project2ng'`, () => {
+  it(`should have as title 'ImageBoardNG'`, () => {
     const fixture = TestBed.createComponent(AppComponent);
     const app = fixture.debugElement.componentInstance;
-    expect(app.title).toEqual('Project2ng');
+    expect(app.title).toEqual('ImageBoardNG');
   });
 
   it('should render title', () => {
     const fixture = TestBed.createComponent(AppComponent);
     fixture.detectChanges();
     const compiled = fixture.debugElement.nativeElement;
-    expect(compiled.querySelector('.content span').textContent).toContain('Project2ng app is running!');
+    expect(compiled.querySelector('.content span').textContent).toContain('ImageBoardNG app is running!');
   });
 });
