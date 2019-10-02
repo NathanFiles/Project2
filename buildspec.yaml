@@ -26,5 +26,5 @@ phases:
 
       commands:
 
-        - aws s3 cp dist/Project2ng s3://project2-imageboard --recursive
+        - aws s3 cp dist/ImageBoardNG s3://project2-imageboard --recursive
 
