@@ -3,14 +3,16 @@ import { NgModule } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { ThreadsComponent } from './component/threads/threads.component';
 import { PostComponent } from './component/post/post.component';
+import { RepliesComponent } from './component/replies/replies.component';
+import { ReplyComponent } from './component/reply/reply.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    ThreadsComponent,
-    PostComponent
+    PostComponent,
+    RepliesComponent,
+    ReplyComponent
   ],
   imports: [
     BrowserModule,
