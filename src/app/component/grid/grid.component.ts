@@ -7,9 +7,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class GridComponent implements OnInit {
 
+  arrayofthreads :string[] = ['https://i.imgur.com/bTlpaDe.png', 'https://i.imgur.com/2iwJVyc.png', 'https://i.imgur.com/9JTINof.png'];
+
   constructor() { }
 
   ngOnInit() {
   }
+
+
 
 }
