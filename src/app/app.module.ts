@@ -5,14 +5,14 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { PostComponent } from './component/post/post.component';
 import { RepliesComponent } from './component/replies/replies.component';
-import { ReplyComponent } from './component/reply/reply.component';
+import { ThreadComponent } from './component/thread/thread.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     PostComponent,
     RepliesComponent,
-    ReplyComponent
+    ThreadComponent
   ],
   imports: [
     BrowserModule,

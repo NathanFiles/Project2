@@ -6,10 +6,19 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./replies.component.css']
 })
 export class RepliesComponent implements OnInit {
-
-  constructor() { }
+  replies = []; 
+  constructor() { 
+    for (let index = 1; index < 50; index++) {
+      this.replies.push("reply #" + index)
+    }
+    console.log(this.replies);
+  }
 
   ngOnInit() {
+    
   }
+  
+
+  
 
 }
