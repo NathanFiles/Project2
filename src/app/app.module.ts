@@ -5,12 +5,14 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { ComponentsComponent } from './app/modules/threads/components/components.component';
 import { ThreadsComponent } from './components/threads/threads.component';
+import { GridComponent } from './component/grid/grid.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     ComponentsComponent,
-    ThreadsComponent
+    ThreadsComponent,
+    GridComponent
   ],
   imports: [
     BrowserModule,
