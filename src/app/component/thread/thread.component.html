@@ -1,0 +1,35 @@
+<style>
+        .wrap{display:flex;}
+        .box{
+            height: 90vh;
+        }
+        #leftbox {
+            width: 45vw;
+            overflow:hidden; /*hide the scrollbar in the left box*/
+        }
+
+        #divider {
+            width:5vw;
+        }
+        
+        #rightbox {
+            width: 50vw;
+            overflow-y:scroll;  /*show the scrollbar in the right box*/
+            overflow-x: hidden;
+        }
+        
+        </style>
+        <div>
+            <h1>Welcome to Pharoah4!</h1>
+            <div class="wrap">
+                <div class="box" id="leftbox">
+                    <app-post></app-post>
+                </div>
+                <div id="divider"></div>
+                <div class="box" id="rightbox">
+                    <app-replies></app-replies>
+                </div>
+            </div>
+        </div>
+        
+        
