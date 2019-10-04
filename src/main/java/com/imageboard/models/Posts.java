@@ -13,7 +13,7 @@ import javax.persistence.Table;
 @Table(name="posts")
 public class Posts {
 	@Id
-	@SequenceGenerator(sequenceName = "p_id_maker", name = "p_seq")
+	@SequenceGenerator(sequenceName = "p_id_maker", name = "p_seq", allocationSize=1)
 	@GeneratedValue(generator = "p_seq", strategy=GenerationType.SEQUENCE)
 	@Column
 	private int p_id;

@@ -13,7 +13,7 @@ import javax.persistence.Table;
 public class Threads {
 	
 	@Id
-	@SequenceGenerator(sequenceName = "t_id_maker", name = "t_seq")
+	@SequenceGenerator(sequenceName = "t_id_maker", name = "t_seq", allocationSize = 1)
 	@GeneratedValue(generator = "t_seq", strategy=GenerationType.SEQUENCE)
 	@Column
 	
