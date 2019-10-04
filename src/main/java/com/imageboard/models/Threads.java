@@ -1,64 +1,70 @@
 package com.imageboard.models;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.SequenceGenerator;
+import javax.persistence.Table;
+
+@Entity
+@Table(name = "threads")
 public class Threads {
 	
+	@Id
+	@SequenceGenerator(sequenceName = "t_id_maker", name = "t_seq")
+	@GeneratedValue(generator = "t_seq", strategy=GenerationType.SEQUENCE)
+	@Column
+	
 	private int t_id;
-	private int t_size;
-	private int t_active;
+	private int num_posts;
+	private int active;
 	
 	public Threads() {
 		super();
 	}
 
-
-	public Threads(int t_id, int t_size, int t_active) {
+	public Threads(int t_id, int num_posts, int active) {
 		super();
 		this.t_id = t_id;
-		this.t_size = t_size;
-		this.t_active = t_active;
+		this.num_posts = num_posts;
+		this.active = active;
 	}
 
-
-	public Threads(int t_size, int t_active) {
+	public Threads(int num_posts, int active) {
 		super();
-		this.t_size = t_size;
-		this.t_active = t_active;
+		this.num_posts = num_posts;
+		this.active = active;
 	}
-
 
 	public int getT_id() {
 		return t_id;
 	}
 
-
 	public void setT_id(int t_id) {
 		this.t_id = t_id;
 	}
 
-
-	public int getT_size() {
-		return t_size;
+	public int getNum_posts() {
+		return num_posts;
 	}
 
-
-	public void setT_size(int t_size) {
-		this.t_size = t_size;
+	public void setNum_posts(int num_posts) {
+		this.num_posts = num_posts;
 	}
 
-
-	public int getT_active() {
-		return t_active;
+	public int getActive() {
+		return active;
 	}
 
-
-	public void setT_active(int t_active) {
-		this.t_active = t_active;
+	public void setActive(int active) {
+		this.active = active;
 	}
-
 
 	@Override
 	public String toString() {
-		return "Threads [t_id=" + t_id + ", t_size=" + t_size + ", t_active=" + t_active + "]";
+		return "Threads [t_id=" + t_id + ", num_posts=" + num_posts + ", active=" + active + "]";
 	}
 
 }
