@@ -18,6 +18,7 @@ public class Posts {
 	@Column
 	private int p_id;
 	
+	private String username;
 	
 	private int t_id;
 	
@@ -35,9 +36,25 @@ public class Posts {
 	}
 
 
-	public Posts(int p_id, int t_id, int parent_id, String image, String text, String timestamp) {
+	public Posts(String username, int t_id, int parent_id, String image, String text, String timestamp) {
+		super();
+		this.username = username;
+		this.t_id = t_id;
+		this.parent_id = parent_id;
+		this.image = image;
+		this.text = text;
+		this.timestamp = timestamp;
+	}
+
+
+
+
+
+
+	public Posts(int p_id, String username, int t_id, int parent_id, String image, String text, String timestamp) {
 		super();
 		this.p_id = p_id;
+		this.username = username;
 		this.t_id = t_id;
 		this.parent_id = parent_id;
 		this.image = image;
@@ -46,14 +63,8 @@ public class Posts {
 	}
 
 
-	public Posts(int t_id, int parent_id, String image, String text, String timestamp) {
-		super();
-		this.t_id = t_id;
-		this.parent_id = parent_id;
-		this.image = image;
-		this.text = text;
-		this.timestamp = timestamp;
-	}
+
+
 
 
 	public int getP_id() {
@@ -116,10 +127,22 @@ public class Posts {
 	}
 
 
+	public String getUsername() {
+		return username;
+	}
+
+
+	public void setUsername(String username) {
+		this.username = username;
+	}
+
+
 	@Override
 	public String toString() {
-		return "Posts [p_id=" + p_id + ", t_id=" + t_id + ", parent_id=" + parent_id + ", image=" + image + ", text="
-				+ text + ", timestamp=" + timestamp + "]";
+		return "Posts [p_id=" + p_id + ", username=" + username + ", t_id=" + t_id + ", parent_id=" + parent_id
+				+ ", image=" + image + ", text=" + text + ", timestamp=" + timestamp + "]";
 	}
+	
+	
 	
 }
