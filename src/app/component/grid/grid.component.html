@@ -1,5 +1,5 @@
 <div id="banner"><h1>Pharoah4</h1></div>
 <div id="threads">
-    <span id="instance" *ngFor='let imguri of this.arrayofthreads'><img src={{imguri}}></span>
+    <span id="instance" *ngFor='let th of this.threadheaders'><img src={{th.imageuri}}><br>{{th.text}}</span>
 </div>
 
