@@ -58,6 +58,7 @@ public class PostServiceImpl implements PostService {
 		
 		try {
 			ObjectMetadata md = new ObjectMetadata();
+			md.setContentLength(file.getSize());
 			s3client.putObject(bucket, keyName, file.getInputStream(), md);
 			return true;
 		} catch (AmazonServiceException e) {
