@@ -20,7 +20,6 @@ export class RepliesComponent implements OnInit {
                           username: "Anonymous"
       })
     }
-    console.log(this.replies);
   }
 
   ngOnInit() {

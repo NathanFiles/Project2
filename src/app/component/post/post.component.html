@@ -1,21 +1,8 @@
-<style>
-#post{
-    border-style: double;
-
-}
-.line{
-    display: inline;
-}
-#timestamp{
-    float: right;
-    margin-right: 5vh;
-}
-
-</style>
 <div id="post">
-<p class="line" id="timestamp">{{post.timestamp}}</p>
-<p>#{{post.p_id}}</p>
-<h3 class="line">{{post.username}}</h3>
-<img src={{post.image}} style="width: 95%;">
-<p>{{post.text}}</p>
+    <p>{{this.threadservice.threadnum}}</p>
+    <p class="line" id="timestamp">{{this.threadservice.threads[this.threadservice.threadnum].timestamp}}</p>
+    <p>#{{this.threadservice.threads[this.threadservice.threadnum].id}}</p>
+    <h3 class="line">{{this.threadservice.posts[this.threadservice.threadnum].username}}</h3>
+    <img src={{this.threadservice.threads[this.threadservice.threadnum].imageuri}} style="width: 95%;">
+    <p>{{this.threadservice.threads[this.threadservice.threadnum].text}}</p>
 </div>

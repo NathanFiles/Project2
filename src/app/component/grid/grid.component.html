@@ -1,0 +1,6 @@
+<div id="threads">
+    <span id="instance" *ngFor='let th of this.threadheaders'><a href="thread/{{th.thread}}">
+        <img src={{th.imageuri}}><br>
+        {{th.text}}
+    </a></span>
+</div>
