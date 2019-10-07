@@ -42,29 +42,30 @@ export class ThreadComponent implements OnInit {
     let newThread = document.getElementById("thread-area");
     console.log("Making thread, what should be asked?");
     console.log(newThread);
-    newThread.insertAdjacentHTML('afterend',`
-    <div class="box" id="leftbox">
-      <div id="post">
-          <p class="line" id="timestamp">${this.post.timestamp}</p>
-          <p>#${this.post.p_id}</p>
-          <h3 class="line">${this.post.username}</h3>
-          <img src=${this.post.image} style="width: 95%;">
-          <p></p>
-      </div>
-    </div>
-    <div id="divider"></div>
-    <button id="replyButton" (click) = "addReply()"></button>
-    <div class="box" id="rightbox">
-      <div id="replies">
-          <div class="replybox" *ngFor="let post of replies">
-              <img src=${this.post.image} id="image">    
-              <h3 class="header">${this.post.username}</h3>
-              <p class="header">${this.post.timestamp}</p>
-              <p class="header">#${this.post.p_id}</p>
-              <p id="text">${this.post.text}</p>
-          </div>
-      </div>
-    </div>`);
+    // newThread.insertAdjacentHTML('beforebegin', '<app-post></app-post>');
+    // newThread.insertAdjacentHTML('afterend',`
+    // <div class="box" id="leftbox">
+    //   <div id="post">
+    //       <p class="line" id="timestamp">${this.post.timestamp}</p>
+    //       <p>#${this.post.p_id}</p>
+    //       <h3 class="line">${this.post.username}</h3>
+    //       <img src=${this.post.image} style="width: 95%;">
+    //       <p></p>
+    //   </div>
+    // </div>
+    // <div id="divider"></div>
+    // <button id="replyButton" (click) = "addReply()"></button>
+    // <div class="box" id="rightbox">
+    //   <div id="replies">
+    //       <div class="replybox" *ngFor="let post of replies">
+    //           <img src=${this.post.image} id="image">    
+    //           <h3 class="header">${this.post.username}</h3>
+    //           <p class="header">${this.post.timestamp}</p>
+    //           <p class="header">#${this.post.p_id}</p>
+    //           <p id="text">${this.post.text}</p>
+    //       </div>
+    //   </div>
+    // </div>`);
   }
 
   uploadImage() {
