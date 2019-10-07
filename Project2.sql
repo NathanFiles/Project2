@@ -49,15 +49,16 @@ CREATE TABLE posts (
 --    image ORDSYS.ORDIMGB DEFAULT NULL,
     image VARCHAR2(200),
     text VARCHAR2(500),
-    timestamp VARCHAR2(20) NOT NULL
+    timestamp VARCHAR2(30) NOT NULL,
+    username VARCHAR2(20) DEFAULT 'Anonymous'
 );
 /
 
 ALTER TABLE posts ADD CONSTRAINT fk_posts_threads FOREIGN KEY
 (t_id) REFERENCES threads(t_id) ON DELETE CASCADE;
 
-ALTER TABLE posts ADD CONSTRAINT fk_posts_posts FOREIGN KEY
-(parent_id) REFERENCES posts(p_id) ON DELETE CASCADE;
+--ALTER TABLE posts ADD CONSTRAINT fk_posts_posts FOREIGN KEY
+--(parent_id) REFERENCES posts(p_id) ON DELETE CASCADE;
 
 CREATE SEQUENCE t_id_maker 
     MINVALUE 1
@@ -73,8 +74,8 @@ CREATE SEQUENCE p_id_maker
 ;
 /
 
-INSERT INTO threads VALUES(t_id_maker.nextval, 0, 1);
-INSERT INTO posts VALUES(p_id_maker.nextval, 1, NULL, 'example.com', 'Test post please ignore', '2019-10-04T08:00');
+INSERT INTO threads VALUES(t_id_maker.nextval, DEFAULT, DEFAULT);
+INSERT INTO posts VALUES(p_id_maker.nextval, 1, 0, 'example.com', 'Test post please ignore', '2019-10-04T08:00', DEFAULT);
 
 SELECT * FROM threads;
 SELECT * FROM posts;
