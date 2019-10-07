@@ -1,7 +1,8 @@
 <style>
 #post{
     border-style: double;
-
+    display:flex;
+    flex-wrap: wrap;
 }
 .line{
     display: inline;
@@ -13,9 +14,11 @@
 
 </style>
 <div id="post">
-<p class="line" id="timestamp">{{post.timestamp}}</p>
-<p>#{{post.p_id}}</p>
-<h3 class="line">{{post.username}}</h3>
-<img src={{post.image}} style="width: 95%;">
-<p>{{post.text}}</p>
+    <p class="line" id="timestamp">{{post.timestamp}}</p>
+    <p>#{{post.p_id}}</p>
+    <h3 class="line">{{post.username}}</h3>
+    <img src={{post.image}} style="width: 95%;">
+    <!-- <p>{{post.text}}</p> -->
+    <p id="text"><input id="postText" value="What do you want to say..." (click) = "emptyInput()"/></p>
+
 </div>

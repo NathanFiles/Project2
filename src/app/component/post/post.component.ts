@@ -6,7 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./post.component.css']
 })
 export class PostComponent implements OnInit {
-  post = { 
+  post = {
           p_id: 1,
           t_id: 1,
           parent_id: null,
@@ -15,8 +15,16 @@ export class PostComponent implements OnInit {
           timestamp: "2019-10-04T08:00",
           username: "Anonymous"
       }
+
+  
   constructor() { }
 
+  emptyInput() {
+    console.log("IN EMPTYINPUT()");
+    let test = document.getElementById("postText");
+    test.innerText = "dsfasdfadsfasdfadsfsdaf";
+  }
+  
   ngOnInit() {
   }
 

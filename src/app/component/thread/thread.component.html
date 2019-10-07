@@ -1,5 +1,5 @@
 <style>
-        .wrap{display:flex;}
+        .wrap {display:flex;}
         .box{
             height: 90vh;
         }
@@ -21,15 +21,25 @@
         </style>
         <div>
             <h1>Welcome to Pharoah4!</h1>
-            <div class="wrap">
+            <button id="makeThread" (click) = "makeThread()">Create new thread</button>
+            <div class="wrap" id="thread-area">
                 <div class="box" id="leftbox">
                     <app-post></app-post>
                 </div>
                 <div id="divider"></div>
+                <button id="replyButton" (click) = "addReply()"></button>
                 <div class="box" id="rightbox">
                     <app-replies></app-replies>
                 </div>
             </div>
+            <!-- <div id="post">
+                <p class="line" id="timestamp">{{post.timestamp}}</p>
+                <p>#{{post.p_id}}</p>
+                <h3 class="line">{{post.username}}</h3>
+                <button id="image" (click) = "uploadImage()">Upload Image</button> -->
+                <!-- <img src={{post.image}} style="width: 95%;"> -->
+                <!-- <p></p>
+            </div> -->
         </div>
         
         

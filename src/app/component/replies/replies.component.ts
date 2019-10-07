@@ -8,7 +8,7 @@ import { Component, OnInit } from '@angular/core';
 export class RepliesComponent implements OnInit {
   
   replies = []; 
-  constructor() { 
+  constructor() {
     for (let index = 2; index < 50; index++) {
       this.replies.push({ p_id: index,
                           t_id: 1,
@@ -22,7 +22,6 @@ export class RepliesComponent implements OnInit {
     }
     console.log(this.replies);
   }
-
   ngOnInit() {
     
   }
