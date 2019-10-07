@@ -7,6 +7,7 @@ import { PostComponent } from './component/post/post.component';
 import { RepliesComponent } from './component/replies/replies.component';
 import { ThreadComponent } from './component/thread/thread.component';
 import { GridComponent } from './component/grid/grid.component';
+import { CreateReplyComponent } from './component/create-reply/create-reply.component';
 
 @NgModule({
   declarations: [
@@ -14,7 +15,8 @@ import { GridComponent } from './component/grid/grid.component';
     PostComponent,
     RepliesComponent,
     ThreadComponent,
-    GridComponent
+    GridComponent,
+    CreateReplyComponent
   ],
   imports: [
     BrowserModule,
