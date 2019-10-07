@@ -6,13 +6,15 @@ import { AppComponent } from './app.component';
 import { PostComponent } from './component/post/post.component';
 import { RepliesComponent } from './component/replies/replies.component';
 import { ThreadComponent } from './component/thread/thread.component';
+import { GridComponent } from './component/grid/grid.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     PostComponent,
     RepliesComponent,
-    ThreadComponent
+    ThreadComponent,
+    GridComponent
   ],
   imports: [
     BrowserModule,
