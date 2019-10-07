@@ -1,0 +1,23 @@
+.wrap {
+    display:flex;
+}
+
+.box {
+    height: 90vh;
+}
+
+#leftbox {
+    width: 45vw;
+    overflow:hidden; /*hide the scrollbar in the left box*/
+}
+
+#divider {
+    width:5vw;
+}
+        
+#rightbox {
+    width: 50vw;
+    overflow-y:scroll;  /*show the scrollbar in the right box*/
+    overflow-x: hidden;
+}
+        

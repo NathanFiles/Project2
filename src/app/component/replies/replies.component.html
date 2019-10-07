@@ -1,0 +1,14 @@
+<style>
+
+    
+
+</style>
+<div id="replies">
+    <div class="replybox" *ngFor="let post of replies">
+        <img id="image" src={{post.image}}>    
+        <h3 class="header">{{post.username}}</h3>
+        <p class="header">{{post.timestamp}}</p>
+        <p class="header">#{{post.p_id}}</p>
+        <p id="text">{{post.text}}</p>
+    </div>
+</div>
