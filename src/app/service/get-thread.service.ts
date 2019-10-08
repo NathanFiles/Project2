@@ -1,4 +1,5 @@
 import { Injectable } from '@angular/core';
+import { HttpClient } from 'selenium-webdriver/http';
 
 @Injectable({
   providedIn: 'root'
@@ -75,9 +76,9 @@ export class GetThreadService {
           username: "Anonymous"
       }
       
-  constructor() { }
+  constructor(private http :HttpClient ) { }
 
-  activethread = {
+  activepost = {
     id: 0,
     thread: 0,
     parent: null,
@@ -87,7 +88,21 @@ export class GetThreadService {
     username: ""
   }
 
+  activereplies = [];
+
   getThread(param) {
-    let threadnum = param.id;
+    for (let i=0; i<this.posts.length; i++) {
+      if (this.posts[i].thread==param.id && this.posts[i].parent==null) {
+        this.activepost=this.posts[i];
+        this.getReplies();
+        break;
+      }
+    }
+  }
+
+  getReplies() {
+    for (let i=0; i<this.posts.length; i++) {
+      if (this.posts[i].parent==this.activepost.id) {
+        this.activereplies.push(posts.)
   }
 }
