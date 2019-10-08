@@ -9,6 +9,7 @@ public interface ThreadService {
 	public Threads addThread(Threads t);
 	public Threads getThread(int id);
 	public List<Threads> allThreads();
+	public List<Threads> activeThreads();
 	public Threads updateThread(Threads t);
 	public boolean deleteThread(Threads t);
 }

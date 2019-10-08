@@ -2,37 +2,69 @@ package com.imageboard.models;
 
 import java.util.Date;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.SequenceGenerator;
+import javax.persistence.Table;
+@Entity
+@Table(name="posts")
 public class Posts {
-	
+	@Id
+	@SequenceGenerator(sequenceName = "p_id_maker", name = "p_seq", allocationSize=1)
+	@GeneratedValue(generator = "p_seq", strategy=GenerationType.SEQUENCE)
+	@Column
 	private int p_id;
-	private int p_thread_id;
-	private String p_image; // This one is up for revision..not sure of the data type
-	private String p_text;
-	private Date p_date;
 	
+	private String username;
 	
+	private int t_id;
+	
+	private int parent_id;
+	
+	private String image; // This one is up for revision..not sure of the data type
+	
+	private String text;
+	
+	private String timestamp;
+	
+
 	public Posts() {
 		super();
 	}
 
 
-	public Posts(int p_id, int p_thread_id, String p_image, String p_text, Date p_date) {
+	public Posts(String username, int t_id, int parent_id, String image, String text, String timestamp) {
+		super();
+		this.username = username;
+		this.t_id = t_id;
+		this.parent_id = parent_id;
+		this.image = image;
+		this.text = text;
+		this.timestamp = timestamp;
+	}
+
+
+
+
+
+
+	public Posts(int p_id, String username, int t_id, int parent_id, String image, String text, String timestamp) {
 		super();
 		this.p_id = p_id;
-		this.p_thread_id = p_thread_id;
-		this.p_image = p_image;
-		this.p_text = p_text;
-		this.p_date = p_date;
+		this.username = username;
+		this.t_id = t_id;
+		this.parent_id = parent_id;
+		this.image = image;
+		this.text = text;
+		this.timestamp = timestamp;
 	}
 
 
-	public Posts(int p_thread_id, String p_image, String p_text, Date p_date) {
-		super();
-		this.p_thread_id = p_thread_id;
-		this.p_image = p_image;
-		this.p_text = p_text;
-		this.p_date = p_date;
-	}
+
+
 
 
 	public int getP_id() {
@@ -45,50 +77,72 @@ public class Posts {
 	}
 
 
-	public int getP_thread_id() {
-		return p_thread_id;
+	public int getT_id() {
+		return t_id;
 	}
 
 
-	public void setP_thread_id(int p_thread_id) {
-		this.p_thread_id = p_thread_id;
+	public void setT_id(int t_id) {
+		this.t_id = t_id;
 	}
 
 
-	public String getP_image() {
-		return p_image;
+	public int getParent_id() {
+		return parent_id;
 	}
 
 
-	public void setP_image(String p_image) {
-		this.p_image = p_image;
+	public void setParent_id(int parent_id) {
+		this.parent_id = parent_id;
 	}
 
 
-	public String getP_text() {
-		return p_text;
+	public String getImage() {
+		return image;
 	}
 
 
-	public void setP_text(String p_text) {
-		this.p_text = p_text;
+	public void setImage(String image) {
+		this.image = image;
 	}
 
 
-	public Date getP_date() {
-		return p_date;
+	public String getText() {
+		return text;
 	}
 
 
-	public void setP_date(Date p_date) {
-		this.p_date = p_date;
+	public void setText(String text) {
+		this.text = text;
+	}
+
+
+	public String getTimestamp() {
+		return timestamp;
+	}
+
+
+	public void setTimestamp(String timestamp) {
+		this.timestamp = timestamp;
+	}
+
+
+	public String getUsername() {
+		return username;
+	}
+
+
+	public void setUsername(String username) {
+		this.username = username;
 	}
 
 
 	@Override
 	public String toString() {
-		return "Posts [p_id=" + p_id + ", p_thread_id=" + p_thread_id + ", p_image=" + p_image + ", p_text=" + p_text
-				+ ", p_date=" + p_date + "]";
+		return "Posts [p_id=" + p_id + ", username=" + username + ", t_id=" + t_id + ", parent_id=" + parent_id
+				+ ", image=" + image + ", text=" + text + ", timestamp=" + timestamp + "]";
 	}
+	
+	
 	
 }
