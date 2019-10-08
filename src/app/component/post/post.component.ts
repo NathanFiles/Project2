@@ -13,6 +13,7 @@ export class PostComponent implements OnInit {
 
   ngOnInit() {
     console.log(this.threadservice.threads);
+    console.log(this.threadservice.posts);
   }
 
 }

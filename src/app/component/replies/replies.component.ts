@@ -32,9 +32,18 @@ export class RepliesComponent implements OnInit {
   allReplies: Observable<post[]> = this.ps.getAllPosts();
   replies : post[] = []; 
   getReplies() {
-    console.log(this.allReplies);
-
+    this.allReplies.subscribe(
+      (response) => {
+        this.replies = response;
+        console.log(response);
+      },
+      (response) => {
+        console.log("Failure");
+      }
+      
+    );
   }
+
   
 
 }
