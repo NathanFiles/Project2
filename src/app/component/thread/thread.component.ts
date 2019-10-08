@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { GetThreadService } from 'src/app/service/get-thread.service';
+import { ThreadService } from 'src/app/service/thread.service';
 
 @Component({
   selector: 'app-thread',
@@ -9,7 +9,7 @@ import { GetThreadService } from 'src/app/service/get-thread.service';
 })
 export class ThreadComponent implements OnInit {
 
-  constructor(private route :ActivatedRoute, private threadservice :GetThreadService) { }
+  constructor(private route :ActivatedRoute, private threadservice :ThreadService) { }
   ngOnInit() {
     this.route.params.subscribe( params =>  this.threadservice.getThread(params));
   }

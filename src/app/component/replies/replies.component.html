@@ -1,10 +1,30 @@
 <style>
-
-    
-
+    .replybox{
+        height: 20vh;
+        border-style: double;
+        margin-right: 5vh;
+        white-space: nowrap;
+        cursor: pointer;
+        /* vertical-align:top; */
+    }
+    #image{
+        height: 20vh;
+        float: left;
+        padding-inline-end: 2vh;    /* this adds space between the image and the text */
+    }
+    .header{
+        vertical-align: top;
+        display: inline-block;
+        padding-inline-end: 15%;
+    }
+    #text{
+        white-space: normal;
+        margin: 0;
+    }
 </style>
+
 <div id="replies">
-    <div class="replybox" *ngFor="let post of replies">
+    <div class="replybox" *ngFor="let post of replies" (click) = "loadReply(post)">
         <img id="image" src={{post.image}}>    
         <h3 class="header">{{post.username}}</h3>
         <p class="header">{{post.timestamp}}</p>
