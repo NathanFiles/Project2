@@ -1,12 +1,12 @@
 import { TestBed } from '@angular/core/testing';
 
-import { GetThreadService } from './get-thread.service';
+import { ThreadService } from './thread.service';
 
-describe('GetThreadService', () => {
+describe('ThreadService', () => {
   beforeEach(() => TestBed.configureTestingModule({}));
 
   it('should be created', () => {
-    const service: GetThreadService = TestBed.get(GetThreadService);
+    const service: ThreadService = TestBed.get(ThreadService);
     expect(service).toBeTruthy();
   });
 });
