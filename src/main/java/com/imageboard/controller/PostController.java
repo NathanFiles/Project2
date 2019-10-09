@@ -41,12 +41,13 @@ public class PostController {
 	}
 	
 	@PostMapping("/posts/create")
-	public String uploadImage(@RequestParam("username") String username,
-			@RequestParam("t_id") int t_id,
-			@RequestParam("parent_id") int parent_id, //
-			@RequestParam("file") MultipartFile file, //the picture needs to be sent as file type with name = file
-			@RequestParam("text") String text,
-			@RequestParam("timeStamp") String timeStamp) {
+	public String uploadImage(@RequestParam(value = "username", required=false) String username, 
+			@RequestParam(value = "t_id", required=false) Integer t_id,
+			@RequestParam(value = "parent_id", required=false) Integer parent_id, //
+			@RequestParam(value = "file", required=false) MultipartFile file, //the picture needs to be sent as file type with name = file
+			@RequestParam(value = "text", required=false) String text,
+			@RequestParam(value = "timeStamp", required=false) String timeStamp) {
+		
 		
 			Random r = new Random();
 			int rb = (r.nextInt(100000))+2;
