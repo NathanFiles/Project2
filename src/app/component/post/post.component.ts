@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { ThreadService } from 'src/app/service/thread.service';
+import { PostService } from 'src/app/service/post.service';
 
 @Component({
   selector: 'app-post',
@@ -9,13 +9,10 @@ import { ThreadService } from 'src/app/service/thread.service';
 })
 export class PostComponent implements OnInit {
   
-  constructor(private router :Router, private threadservice :ThreadService) { }
+  constructor(private router :Router, private postservice :PostService) { }
 
 
   ngOnInit() {
-    // console.log(this.threadservice.threads);
-    // console.log(this.threadservice.posts);
-    // console.log(this.threadservice.threadnum);
   }
 
 }

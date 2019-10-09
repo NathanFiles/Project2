@@ -1,6 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { PostService } from 'src/app/service/post.service';
+import { post } from 'src/app/model/post';
 import { ThreadService } from 'src/app/service/thread.service';
+import { thread } from 'src/app/model/thread';
 
 @Component({
   selector: 'app-grid',
@@ -9,21 +12,22 @@ import { ThreadService } from 'src/app/service/thread.service';
 })
 export class GridComponent implements OnInit {
 
-  arrayofimg :string[] = ['https://i.imgur.com/bTlpaDe.png', 'https://i.imgur.com/2iwJVyc.png', 'https://i.imgur.com/9JTINof.png', 'https://media.giphy.com/media/l3q2Z6S6n38zjPswo/giphy.gif'];
-
-  constructor(private router :Router, private threadservice :ThreadService) { }
+  constructor(private router :Router, private postservice :PostService, private threadservice :ThreadService) { }
   
-  threadheaders = [];
+  activeheaders :post[] = [];
 
   ngOnInit() {
-    for (let i=0; i<this.threadservice.threads.length; i++) {
-      if (this.threadservice.threads[i].active) {
-        for (let j=0; j<this.threadservice.posts.length; j++) {
-          if (this.threadservice.posts[j].t_id==this.threadservice.threads[i].id && this.threadservice.posts[j].parent_id==null) {
-            this.threadheaders.push(this.threadservice.posts[j]);
-          }
-        }
+    this.postservice.getThreadHeaders().subscribe(
+      (response) => {
+        console.log(response);
+        this.activeheaders=response;
+      },
+      () => {
+        console.log("No headers found");
       }
-    }
+    );
+
   }
+
+
 }
