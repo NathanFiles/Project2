@@ -28,7 +28,7 @@ public class PostController {
 	public List<Posts> allPosts(){
 		return ps.allPosts();
 	}
-	
+  
 	@RequestMapping(value = "/posts/{id}/replies", method = RequestMethod.GET)
 	public List<Posts> getReplies(@PathVariable("id") int id){
 		return ps.getReplies(id);
