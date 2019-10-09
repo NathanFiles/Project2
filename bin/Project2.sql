@@ -13,7 +13,7 @@
 --Additional functionality:
 --User can shortcut to top of thread
 --User can expand a post image to full resolution by clicking/hovering? on it
---System can label threads that have existed for a certain period of time as ‘decayed’ and remove them from the home page
+--System can label threads that have existed for a certain period of time as ï¿½decayedï¿½ and remove them from the home page
 --System can archive threads
 --User can log in
 --Admin can log in
