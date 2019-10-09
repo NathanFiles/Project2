@@ -14,6 +14,11 @@ export class GridComponent implements OnInit {
   constructor(private router :Router, private threadservice :ThreadService) { }
   
   threadheaders = [];
+  loadNewThread: boolean = false;
+
+  newThread() {
+    this.loadNewThread = true;
+  }
 
   ngOnInit() {
     for (let i=0; i<this.threadservice.threads.length; i++) {
