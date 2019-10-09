@@ -11,6 +11,9 @@ public interface PostService {
 	public Posts addPost(Posts p);
 	public Posts getPost(int id);
 	public List<Posts> allPosts();
+	public List<Posts> getReplies(int id);
+	public List<Posts> getHeaderPosts();
+	public List<Posts> getActiveHeaders();
 	public Posts updatePost(Posts p);
 	public boolean deletePost(Posts p);
 	public boolean uploadImage(String keyName, MultipartFile file);

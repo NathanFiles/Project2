@@ -3,6 +3,7 @@ package com.imageboard.controller;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -13,6 +14,7 @@ import org.springframework.web.bind.annotation.RestController;
 import com.imageboard.models.Threads;
 import com.imageboard.services.ThreadService;
 
+@CrossOrigin(origins = {"http://localhost:4200", "http://project2-imageboard.s3-website.us-east-2.amazonaws.com"})
 @RestController
 public class ThreadController {
 	
@@ -22,6 +24,11 @@ public class ThreadController {
 	@RequestMapping(value = "/threads", method = RequestMethod.GET)
 	public List<Threads> allThreads(){
 		return ts.allThreads();
+	}
+	
+	@RequestMapping(value = "/threads/active", method = RequestMethod.GET)
+	public List<Threads> activeThreads(){
+		return ts.activeThreads();
 	}
 	
 	@GetMapping(value = "/threads/{id}")

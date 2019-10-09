@@ -17,7 +17,7 @@ import org.springframework.web.multipart.MultipartFile;
 import com.imageboard.models.Posts;
 import com.imageboard.services.PostService;
 
-@CrossOrigin(origins = "http://localhost:4200")
+@CrossOrigin(origins = {"http://localhost:4200", "http://project2-imageboard.s3-website.us-east-2.amazonaws.com"})
 @RestController
 public class PostController {
 	
@@ -28,6 +28,17 @@ public class PostController {
 	public List<Posts> allPosts(){
 		return ps.allPosts();
 	}
+  
+	@RequestMapping(value = "/posts/{id}/replies", method = RequestMethod.GET)
+	public List<Posts> getReplies(@PathVariable("id") int id){
+		return ps.getReplies(id);
+	}
+	
+	@RequestMapping(value = "/posts/headers", method = RequestMethod.GET)
+	public List<Posts> getActiveHeaders(){
+		return ps.getHeaderPosts();
+	}
+	
 
 	@GetMapping(value = "/posts/{id}")
 	public Posts getPostById(@PathVariable("id") int id) {

@@ -1,5 +1,6 @@
 package com.imageboard.services;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -27,6 +28,18 @@ public class ThreadServiceImpl implements ThreadService {
 	@Override
 	public List<Threads> allThreads() {
 		return (List<Threads>) tr.findAll();
+	}
+	
+	@Override
+	public List<Threads> activeThreads() {
+		List<Threads> threads = (List<Threads>) tr.findAll();
+		List<Threads> active = new ArrayList<Threads>();
+		for (int i=0; i<threads.size(); i++) {
+			if (threads.get(i).getActive()==1) {
+				active.add(threads.get(i));
+			}
+		}
+		return active;
 	}
 
 	@Override
