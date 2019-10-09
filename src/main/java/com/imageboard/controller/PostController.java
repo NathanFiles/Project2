@@ -17,7 +17,7 @@ import org.springframework.web.multipart.MultipartFile;
 import com.imageboard.models.Posts;
 import com.imageboard.services.PostService;
 
-@CrossOrigin(origins = "http://localhost:4200")
+@CrossOrigin(origins = {"http://localhost:4200", "http://project2-imageboard.s3-website.us-east-2.amazonaws.com"})
 @RestController
 public class PostController {
 	

@@ -14,7 +14,7 @@ import org.springframework.web.bind.annotation.RestController;
 import com.imageboard.models.Threads;
 import com.imageboard.services.ThreadService;
 
-@CrossOrigin(origins = "http://localhost:4200")
+@CrossOrigin(origins = {"http://localhost:4200", "http://project2-imageboard.s3-website.us-east-2.amazonaws.com"})
 @RestController
 public class ThreadController {
 	
