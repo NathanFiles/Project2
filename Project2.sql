@@ -26,12 +26,21 @@
 --User can conceal contents of post image until expanded/opened
 --User can set layout preferences
 --User can enable night mode
+DROP TABLE userlist;
 DROP TABLE posts;
 DROP TABLE threads;
 DROP SEQUENCE t_id_maker;
 DROP SEQUENCE p_id_maker;
+DROP SEQUENCE u_id_maker;
 
+CREATE TABLE userlist (
+    u_id NUMBER(10) PRIMARY KEY,
+    username VARCHAR2(25),
+    password VARCHAR2(25),
+    type NUMBER(1) DEFAULT 0    --0: regular user  1: moderator  2: admin
 
+);
+/
 
 CREATE TABLE threads (
     t_id NUMBER(10) PRIMARY KEY,
@@ -49,7 +58,7 @@ CREATE TABLE posts (
 --    image ORDSYS.ORDIMGB DEFAULT NULL,
     image VARCHAR2(200),
     text VARCHAR2(500),
-    timestamp VARCHAR2(20) NOT NULL,
+    timestamp VARCHAR2(30) NOT NULL,
     username VARCHAR2(20) DEFAULT 'Anonymous'
 );
 /
@@ -74,8 +83,12 @@ CREATE SEQUENCE p_id_maker
 ;
 /
 
-INSERT INTO threads VALUES(t_id_maker.nextval, DEFAULT, DEFAULT);
-INSERT INTO posts VALUES(p_id_maker.nextval, 1, 0, 'example.com', 'Test post please ignore', '2019-10-04T08:00', DEFAULT);
+CREATE SEQUENCE u_id_maker 
+    MINVALUE 1
+    START WITH 1
+    INCREMENT BY 1
+;
+/
 
 SELECT * FROM threads;
 SELECT * FROM posts;

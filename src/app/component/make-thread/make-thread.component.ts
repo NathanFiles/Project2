@@ -53,6 +53,9 @@ export class MakeThreadComponent implements OnInit {
         console.log("num_posts = " + this.newThread.num_posts);
         console.log("active = " + this.newThread.active);
 
+        var today = new Date();
+        var time = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
+
         
         this.newPost = {
           p_id : 1,
@@ -60,7 +63,7 @@ export class MakeThreadComponent implements OnInit {
           parent_id : 0,
           image : "",
           text : this.postText,
-          timestamp : new Date().toDateString(),
+          timestamp : new Date().toDateString() + " " + time,
           username : "Anonymous"
         };
 
@@ -90,22 +93,6 @@ export class MakeThreadComponent implements OnInit {
       }
     );
 
-    // const fd = new FormData();
-    // fd.append("username", postVar.username);
-    // fd.append("file", this.currentPicture);
-    // fd.append("text",postVar.text);
-    // fd.append("t_id", "" + postVar.t_id);
-    // fd.append("parent_id", "" + postVar.parent_id);
-    // fd.append("timeStamp", postVar.timestamp);
-    // this.http.post("http://localhost:8080/posts/create", fd);
-    
-    // p_id : 1,
-    // t_id : this.threadService.threadnum,
-    // parent_id : this.threadService.activepost.p_id,
-    // image : "",
-    // text : this.replyText,
-    // timestamp : new Date().toDateString(),
-    // username : "Anonymous"
 
     
   }
