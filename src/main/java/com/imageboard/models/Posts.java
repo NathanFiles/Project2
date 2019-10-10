@@ -15,8 +15,8 @@ public class Posts {
 	@Id
 	@SequenceGenerator(sequenceName = "p_id_maker", name = "p_seq", allocationSize=1)
 	@GeneratedValue(generator = "p_seq", strategy=GenerationType.SEQUENCE)
-	@Column
-	private int p_id;
+	@Column(name = "p_id")
+	private int pid;
 	
 	private String username;
 	
@@ -53,7 +53,7 @@ public class Posts {
 
 	public Posts(int p_id, String username, int t_id, int parent_id, String image, String text, String timestamp) {
 		super();
-		this.p_id = p_id;
+		this.pid = p_id;
 		this.username = username;
 		this.t_id = t_id;
 		this.parent_id = parent_id;
@@ -68,12 +68,12 @@ public class Posts {
 
 
 	public int getP_id() {
-		return p_id;
+		return pid;
 	}
 
 
 	public void setP_id(int p_id) {
-		this.p_id = p_id;
+		this.pid = p_id;
 	}
 
 
@@ -139,7 +139,7 @@ public class Posts {
 
 	@Override
 	public String toString() {
-		return "Posts [p_id=" + p_id + ", username=" + username + ", t_id=" + t_id + ", parent_id=" + parent_id
+		return "Posts [p_id=" + pid + ", username=" + username + ", t_id=" + t_id + ", parent_id=" + parent_id
 				+ ", image=" + image + ", text=" + text + ", timestamp=" + timestamp + "]";
 	}
 	

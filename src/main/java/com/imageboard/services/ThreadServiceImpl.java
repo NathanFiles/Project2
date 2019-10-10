@@ -27,12 +27,12 @@ public class ThreadServiceImpl implements ThreadService {
 
 	@Override
 	public List<Threads> allThreads() {
-		return (List<Threads>) tr.findAll();
+		return (List<Threads>) tr.findAllByOrderByTidDesc();
 	}
 	
 	@Override
 	public List<Threads> activeThreads() {
-		List<Threads> threads = (List<Threads>) tr.findAll();
+		List<Threads> threads = (List<Threads>) tr.findAllByOrderByTidDesc();
 		List<Threads> active = new ArrayList<Threads>();
 		for (int i=0; i<threads.size(); i++) {
 			if (threads.get(i).getActive()==1) {

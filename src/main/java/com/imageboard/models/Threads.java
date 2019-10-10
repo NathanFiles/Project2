@@ -15,9 +15,9 @@ public class Threads {
 	@Id
 	@SequenceGenerator(sequenceName = "t_id_maker", name = "t_seq", allocationSize = 1)
 	@GeneratedValue(generator = "t_seq", strategy=GenerationType.SEQUENCE)
-	@Column
+	@Column(name = "t_id")
 	
-	private int t_id;
+	private int tid;
 	private int num_posts;
 	private int active;
 	
@@ -27,7 +27,7 @@ public class Threads {
 
 	public Threads(int t_id, int num_posts, int active) {
 		super();
-		this.t_id = t_id;
+		this.tid = t_id;
 		this.num_posts = num_posts;
 		this.active = active;
 	}
@@ -39,11 +39,11 @@ public class Threads {
 	}
 
 	public int getT_id() {
-		return t_id;
+		return tid;
 	}
 
 	public void setT_id(int t_id) {
-		this.t_id = t_id;
+		this.tid = t_id;
 	}
 
 	public int getNum_posts() {
@@ -64,7 +64,7 @@ public class Threads {
 
 	@Override
 	public String toString() {
-		return "Threads [t_id=" + t_id + ", num_posts=" + num_posts + ", active=" + active + "]";
+		return "Threads [t_id=" + tid + ", num_posts=" + num_posts + ", active=" + active + "]";
 	}
 
 }
