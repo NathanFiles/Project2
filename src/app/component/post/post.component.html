@@ -1,21 +1,7 @@
-<style>
-    #post{
-        border-style: double;
-    }
-    .line{
-        display: inline;
-    }
-    #timestamp{
-        float: right;
-        margin-right: 5vh;
-    }
-</style>
-
 <div id="post">
-
-    <p class="line" id="timestamp">{{this.threadservice.activepost.timestamp}}</p>
-    <p>#{{this.threadservice.activepost.p_id}}</p>
-    <h3 class="line">{{this.threadservice.activepost.username}}</h3>
-    <img src={{this.threadservice.activepost.image}} style="width: 95%;">
-    <p>{{this.threadservice.activepost.text}}</p>
+    <p class="line" id="timestamp">{{this.postservice.activepost.timestamp}}</p>
+    <p>#{{this.postservice.activepost.p_id}}</p>
+    <h3 class="line">{{this.postservice.activepost.username}}</h3>
+    <img src={{this.postservice.activepost.image}} style="width: 95%;">
+    <p>{{this.postservice.activepost.text}}</p>
 </div>

@@ -15,3 +15,11 @@
     white-space: normal;
     margin: 0;
 }
+.replybox{
+    height: 20vh;
+    border-style: double;
+    margin-right: 5vh;
+    white-space: nowrap;
+    cursor: pointer;
+    /* vertical-align:top; */
+}

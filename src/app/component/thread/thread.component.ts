@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { ThreadService } from 'src/app/service/thread.service';
+import { PostService } from 'src/app/service/post.service';
 
 @Component({
   selector: 'app-thread',
@@ -9,9 +10,10 @@ import { ThreadService } from 'src/app/service/thread.service';
 })
 export class ThreadComponent implements OnInit {
 
-  constructor(private route :ActivatedRoute, private threadservice :ThreadService) { }
+  constructor(private route :ActivatedRoute, private postservice :PostService) { }
+  
   ngOnInit() {
-    this.route.params.subscribe( params =>  this.threadservice.getThread(params));
+    this.route.params.subscribe( params =>  this.postservice.loadThread(params));
   }
 
 }
