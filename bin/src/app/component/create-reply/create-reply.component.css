@@ -1,0 +1,21 @@
+#replybutton{
+    margin : 0px 0px 5px 5px;
+    height: 20px;
+    width : 80px;
+    font-weight: bold;
+    font-size: 15px;
+
+}
+
+#replyareatext{
+    margin-top: 5px;
+    width : 80%;
+}
+
+#replyPicture{
+    margin:5px;
+}
+#replydiv{
+    border: 1px solid blue;
+    width : 60%;
+}
