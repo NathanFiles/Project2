@@ -61,7 +61,6 @@ export class PostService {
     text: ""
 
   };
-  activepost: post;
   activereplies :post[];
 
   loadThread(param) {
