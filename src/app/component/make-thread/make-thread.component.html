@@ -28,7 +28,7 @@
         <tr>
             <th>Image URL:</th>
             <!-- <td id="image-url"><input type="text" [(ngModel)] = "imageUrl" /></td> -->
-            <td id="image-url"><input type="file" [(ngModel)] = "imageUrl" /></td>
+            <td id="image-url"><input type="file" [(ngModel)] = "picture" (change)="onSelected($event)"/></td>
         </tr>
         <!-- <tr>
             <th>File</th>
@@ -44,7 +44,7 @@
     </div>
 
     <div id="new-line"></div>
-    <button id="completeThread" (click) = "addThread()">Create thread</button>
+    <button id="completeThread" (click) = "addThread()" >Create thread</button>
     <!-- <h2>Enter Thread Information</h2>
     <p>Thread name:<input id="threadName" type="text"/></p>
     <button id="imgupload" (click) = "uploadImage()">Upload image</button>
