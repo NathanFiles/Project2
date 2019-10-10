@@ -10,7 +10,6 @@ import { RepliesComponent } from './component/replies/replies.component';
 import { ThreadComponent } from './component/thread/thread.component';
 import { GridComponent } from './component/grid/grid.component';
 import { CreateReplyComponent } from './component/create-reply/create-reply.component';
-import { MakeThreadComponent } from './component/make-thread/make-thread.component';
 
 @NgModule({
   declarations: [
@@ -19,8 +18,7 @@ import { MakeThreadComponent } from './component/make-thread/make-thread.compone
     RepliesComponent,
     ThreadComponent,
     GridComponent,
-    CreateReplyComponent,
-    MakeThreadComponent
+    CreateReplyComponent
   ],
   imports: [
     BrowserModule,

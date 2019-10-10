@@ -13,7 +13,7 @@
 --Additional functionality:
 --User can shortcut to top of thread
 --User can expand a post image to full resolution by clicking/hovering? on it
---System can label threads that have existed for a certain period of time as ëdecayedí and remove them from the home page
+--System can label threads that have existed for a certain period of time as ëdecayedÅEand remove them from the home page
 --System can archive threads
 --User can log in
 --Admin can log in
@@ -79,5 +79,9 @@ INSERT INTO posts VALUES(p_id_maker.nextval, 1, 0, 'example.com', 'Test post ple
 
 SELECT * FROM threads;
 SELECT * FROM posts;
+
+DELETE FROM posts WHERE p_id = 37;
+DELETE FROM posts WHERE p_id = 38;
+DELETE FROM posts WHERE p_id = 1;
 
 commit;

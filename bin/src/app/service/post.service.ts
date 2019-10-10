@@ -44,9 +44,6 @@ export class PostService {
     fd.append("timeStamp", postVar.timestamp);
     this.http.post(this.host+"/posts/create", fd);
 
-  getReplies(p_id :number) :Observable<post[]> {
-    return this.http.get<post[]>(this.host+"/posts/"+p_id+"/replies");
-  }
 
     return this.http.post(this.host+"/posts/create", fd);
   }
