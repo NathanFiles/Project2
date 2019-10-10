@@ -52,7 +52,7 @@ public class PostController {
 	}
 	
 	@PostMapping("/posts/create")
-	public String uploadImage(@RequestParam(value = "username", required=false) String username, 
+	public Posts uploadImage(@RequestParam(value = "username", required=false) String username, 
 			@RequestParam(value = "t_id", required=false) Integer t_id,
 			@RequestParam(value = "parent_id", required=false) Integer parent_id, //
 			@RequestParam(value = "file", required=false) MultipartFile file, //the picture needs to be sent as file type with name = file
@@ -69,13 +69,13 @@ public class PostController {
 				String imageUrl = "https://krishnakafleybucket.s3.us-east-2.amazonaws.com/"+ keyName;
 				
 				Posts p = new Posts(username, t_id, parent_id, imageUrl, text, timeStamp);
-				ps.addPost(p);
+				return ps.addPost(p);
+				
 				
 			} else {
-				return "Post failed!";
+				return null;
 				
 			}
-		return "Post uploaded!";
 	}
 	
 	@RequestMapping(value = "/posts", method = RequestMethod.PUT, consumes = "application/json")
