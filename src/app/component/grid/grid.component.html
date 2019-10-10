@@ -1,5 +1,7 @@
 <div id="threads">
-    <span id="instance" *ngFor='let th of this.activeheaders'><a href="thread/{{th.t_id}}/{{th.p_id}}">
+    <button id="new-thread" (click) = "newThread()">Create new thread</button>
+    <app-make-thread *ngIf="loadNewThread"></app-make-thread>
+    <span id="instance" *ngFor='let th of this.threadheaders'><a href="thread/{{th.t_id}}">
         <img src={{th.image}}><br>
         {{th.text}}
     </a></span>

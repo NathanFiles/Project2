@@ -36,8 +36,13 @@ export class PostService {
 
   addPost(postVar: post) {
     const fd = new FormData();
+    // fd.append()
     fd.append("username", postVar.username);
-    fd.append("file", this.currentPicture);
+    if (this.currentPicture != null) {
+      fd.append("file", this.currentPicture);
+    // } else {
+
+    }
     fd.append("text",postVar.text);
     fd.append("t_id", "" + postVar.t_id);
     fd.append("parent_id", "" + postVar.parent_id);

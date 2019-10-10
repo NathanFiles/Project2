@@ -14,7 +14,15 @@ export class GridComponent implements OnInit {
 
   constructor(private router :Router, private postservice :PostService, private threadservice :ThreadService) { }
   
+
+  threadheaders = [];
+  loadNewThread: boolean = false;
+
+  newThread() {
+    this.loadNewThread = true;
+  }
   activeheaders :post[] = [];
+
 
   ngOnInit() {
     this.postservice.getThreadHeaders().subscribe(
