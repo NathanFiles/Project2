@@ -25,7 +25,6 @@ export class CreateReplyComponent implements OnInit {
       this.replyService.currentPicture = <File> event.target.files[0];
 
     }
-  
 
     postReply(){
       

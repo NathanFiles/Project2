@@ -10,6 +10,7 @@ import { RepliesComponent } from './component/replies/replies.component';
 import { ThreadComponent } from './component/thread/thread.component';
 import { GridComponent } from './component/grid/grid.component';
 import { CreateReplyComponent } from './component/create-reply/create-reply.component';
+import { LoginComponent } from './component/login/login.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { CreateReplyComponent } from './component/create-reply/create-reply.comp
     RepliesComponent,
     ThreadComponent,
     GridComponent,
-    CreateReplyComponent
+    CreateReplyComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
