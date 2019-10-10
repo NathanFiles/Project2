@@ -16,6 +16,8 @@ import com.amazonaws.services.s3.model.ObjectMetadata;
 import com.imageboard.models.Posts;
 import com.imageboard.models.Threads;
 import com.imageboard.repositories.PostRepository;
+import org.springframework.data.domain.Sort;
+
 
 @Service
 public class PostServiceImpl implements PostService {
@@ -44,12 +46,12 @@ public class PostServiceImpl implements PostService {
 	
 	@Override
 	public List<Posts> allPosts() {
-		return (List<Posts>) pr.findAll();
+		return (List<Posts>) pr.findAllByOrderByPidDesc();
 	}
 	
 	@Override
 	public List<Posts> getReplies(int id) {
-		List<Posts> posts = (List<Posts>) pr.findAll();
+		List<Posts> posts = (List<Posts>) pr.findAllByOrderByPidDesc();
 		List<Posts> replies = new ArrayList<Posts>();
 		for (int i=0; i<posts.size(); i++) {
 			if (posts.get(i).getParent_id()==id) {
@@ -61,7 +63,7 @@ public class PostServiceImpl implements PostService {
 	
 	@Override
 	public List<Posts> getHeaderPosts() {
-		List<Posts> posts = (List<Posts>) pr.findAll();
+		List<Posts> posts = (List<Posts>) pr.findAllByOrderByPidDesc();
 		List<Posts> headers = new ArrayList<Posts>();
 		for (int i=0; i<posts.size(); i++) {
 			if (posts.get(i).getParent_id()==0) {
