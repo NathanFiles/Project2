@@ -62,19 +62,26 @@ public class PostController {
 		
 			Random r = new Random();
 			int rb = (r.nextInt(100000))+2;
-			String keyName = ""+ rb + file.getOriginalFilename();
-			boolean success = ps.uploadImage(keyName, file);
+			String keyName = "";
+			boolean success = false;
+			if (file != null) {
+				keyName = ""+ rb + file.getOriginalFilename();
+				success = ps.uploadImage(keyName, file);
+			}
 			
 			if(success) {
 				String imageUrl = "https://krishnakafleybucket.s3.us-east-2.amazonaws.com/"+ keyName;
-				
 				Posts p = new Posts(username, t_id, parent_id, imageUrl, text, timeStamp);
 				return ps.addPost(p);
 				
 				
-			} else {
+			} else if (text != null) {
+				String imageUrl = "https://www.nocowboys.co.nz/images/v3/no-image-available.png";
+				Posts p = new Posts(username, t_id, parent_id, imageUrl, text, timeStamp);
+				return ps.addPost(p);
+			}
+			else {
 				return null;
-				
 			}
 	}
 	
