@@ -3,7 +3,6 @@ import { Observable } from 'rxjs';
 import { post } from 'src/app/model/post';
 import { PostService } from 'src/app/service/post.service';
 import { ThreadService } from 'src/app/service/thread.service';
-import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-replies',
@@ -12,13 +11,15 @@ import { Router } from '@angular/router';
 })
 export class RepliesComponent implements OnInit {
   
-  constructor(private postservice: PostService, private threadservice: ThreadService, private router :Router) {  }
+  constructor(private ps: PostService, private ts: ThreadService) {  }
 
   ngOnInit() {
+    this.getReplies();
+
   }
 
-  allReplies: Observable<post[]> = this.postservice.getAllPosts();
-  replies : post[] = [];
+  allReplies: Observable<post[]> = this.ps.getAllPosts();
+  replies : post[] = []; 
   getReplies() {
     this.allReplies.subscribe(
       (response) => {
@@ -32,8 +33,10 @@ export class RepliesComponent implements OnInit {
     );
   }
 
-  loadReply(reply :post) {
-    this.router.navigateByUrl("/threads/"+reply.t_id+"/"+reply.p_id);
+  loadReply(post) {
+    console.log(post);
+    this.ts.activepost = post;
+
   }
 
   

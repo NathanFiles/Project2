@@ -12,11 +12,8 @@ import { thread } from 'src/app/model/thread';
 })
 export class GridComponent implements OnInit {
 
-  constructor(private postservice :PostService) { }
+  constructor(private router :Router, private postservice :PostService, private threadservice :ThreadService) { }
   
-  threadformon: boolean = false;
-  openThreadForm() { this.threadformon=true; }
-
   activeheaders :post[] = [];
 
   ngOnInit() {

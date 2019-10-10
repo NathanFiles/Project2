@@ -116,7 +116,6 @@ export class MakeThreadComponent implements OnInit {
   // constructor(private postservice: GetPostService) { }
 
   ngOnInit() {
-    this.route.params.subscribe( params =>  this.threadservice.getThread(params));
   }
 
   defaultPostText: string = "Say something...";
