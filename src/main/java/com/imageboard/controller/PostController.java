@@ -58,12 +58,16 @@ public class PostController {
 			@RequestParam(value = "file", required=false) MultipartFile file, //the picture needs to be sent as file type with name = file
 			@RequestParam(value = "text", required=false) String text,
 			@RequestParam(value = "timeStamp", required=false) String timeStamp) {
-		
+			System.out.println(t_id);
 		
 			Random r = new Random();
 			int rb = (r.nextInt(100000))+2;
-			String keyName = ""+ rb + file.getOriginalFilename();
-			boolean success = ps.uploadImage(keyName, file);
+            String keyName = "";
+            boolean success = false;
+            if (file != null ) {
+            	keyName = ""+ rb + file.getOriginalFilename();
+            	success = ps.uploadImage(keyName, file);
+            }
 			
 			if(success) {
 				String imageUrl = "https://krishnakafleybucket.s3.us-east-2.amazonaws.com/"+ keyName;
@@ -73,8 +77,11 @@ public class PostController {
 				
 				
 			} else {
-				return null;
-				
+                String imageUrl = "https://static.tildacdn.com/tild3531-6533-4239-a331-613466346239/-/empty/blob.png";
+                
+                Posts p = new Posts(username, t_id, parent_id, imageUrl, text, timeStamp);
+            	System.out.println(p);
+                return ps.addPost(p);
 			}
 	}
 	
