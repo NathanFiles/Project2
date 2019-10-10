@@ -10,8 +10,7 @@ export class PostService {
   private headers = new HttpHeaders({'Content-Type': 'application/json'});
   constructor(private http :HttpClient) { }
 
-  //host :string = "http://ec2-18-218-37-90.us-east-2.compute.amazonaws.com:8080";
-  host :string = "http://localhost:8080";
+  host :string = "http://ec2-18-218-37-90.us-east-2.compute.amazonaws.com:8080"
 
   getPost(p_id :number) :Observable<post> {
     return this.http.get<post>(this.host+"/posts/"+p_id);
@@ -45,9 +44,6 @@ export class PostService {
     fd.append("timeStamp", postVar.timestamp);
     this.http.post(this.host+"/posts/create", fd);
 
-  getReplies(p_id :number) :Observable<post[]> {
-    return this.http.get<post[]>(this.host+"/posts/"+p_id+"/replies");
-  }
 
     return this.http.post(this.host+"/posts/create", fd);
   }

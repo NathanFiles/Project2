@@ -80,4 +80,11 @@ INSERT INTO posts VALUES(p_id_maker.nextval, 1, 0, 'example.com', 'Test post ple
 SELECT * FROM threads;
 SELECT * FROM posts;
 
+<<<<<<< HEAD
+=======
+DELETE FROM posts WHERE p_id = 37;
+DELETE FROM posts WHERE p_id = 38;
+DELETE FROM posts WHERE p_id = 1;
+
+>>>>>>> 4d6a6efbd29f48b487e2f8f5e6dcfa1249043a29
 commit;
