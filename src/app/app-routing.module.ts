@@ -5,7 +5,7 @@ import { ThreadComponent } from './component/thread/thread.component';
 
 
 const routes: Routes = [
-  {path:'thread/:id',component:ThreadComponent},
+  {path:'thread/:thread/:post',component:ThreadComponent},
   {path:'grid',component:GridComponent},
   {path:'',redirectTo:'grid',pathMatch:'full'}
 ];

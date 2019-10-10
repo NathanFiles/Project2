@@ -10,7 +10,10 @@ export class PostService {
   private headers = new HttpHeaders({'Content-Type': 'application/json'});
   constructor(private http :HttpClient) { }
 
-  host :string = "http://ec2-18-218-37-90.us-east-2.compute.amazonaws.com:8080"
+
+  threadnum = -1;
+  // host :string = "http://ec2-18-218-37-90.us-east-2.compute.amazonaws.com:8080"
+  host :string = "http://localhost:8080";
 
   getPost(p_id :number) :Observable<post> {
     return this.http.get<post>(this.host+"/posts/"+p_id);
@@ -48,19 +51,34 @@ export class PostService {
     return this.http.post(this.host+"/posts/create", fd);
   }
 
-  activepost :post;
+  activepost :post = {
+    p_id: 0,
+    t_id: 0,
+    parent_id: 0,
+    timestamp: "",
+    username: "",
+    image: "",
+    text: ""
+
+  };
+  activepost: post;
   activereplies :post[];
 
   loadThread(param) {
-    this.getPost(param.p_id).subscribe(
+
+    this.threadnum = param.thread;
+    this.getPost(param.post).subscribe(
       (response) => {
         console.log(response);
         this.activepost = response;
+        console.log(this.activepost);
+
         this.loadReplies(this.activepost.p_id);
       },
       () => {
         console.log("Post not found");
       }
+
     )
   }
 

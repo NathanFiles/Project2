@@ -26,7 +26,7 @@ import { MakeThreadComponent } from './component/make-thread/make-thread.compone
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
