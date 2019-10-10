@@ -1,9 +1,0 @@
-<div id="replies">
-    <div class="replybox" *ngFor="let reply of this.postservice.activereplies" (click) = "loadReply(reply)">
-        <img id="image" src={{reply.image}}>    
-        <h3 class="header">{{reply.username}}</h3>
-        <p class="header">{{reply.timestamp}}</p>
-        <p class="header">#{{reply.p_id}}</p>
-        <p id="text">{{reply.text}}</p>
-    </div>
-</div>
