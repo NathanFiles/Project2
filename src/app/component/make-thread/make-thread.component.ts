@@ -17,26 +17,23 @@ export class MakeThreadComponent implements OnInit {
 
   title: string;
   postText: string;
-  imageUrl: string;
+  picture;
 
-  // addPokemon() {
-  //   this.poke.addPokemon(new pokemon(4,"Charmander","Fire"));
-  //   this.allPokemon.subscribe(
-  //     (response) => {
-  //       console.log(response);
-  //     },
-  //     (response) => {
-  //       console.log("OOPSIE");
-  //     }
-  //   );
-  // }
-
-  // post: 
 
   newPost: post = null;
   newThread: thread = null;
+
+
+  onSelected(event){
+    this.postservice.currentPicture = <File> event.target.files[0];
+  }
+
   addThread() {
-    
+    console.log("pic:");
+    console.log(this.picture);
+
+
+
     // console.log(this.title);
     // console.log(this.postText);
     // console.log(this.imageUrl);
@@ -61,11 +58,12 @@ export class MakeThreadComponent implements OnInit {
           p_id : 1,
           t_id : this.newThread.t_id,
           parent_id : 0,
-          image : this.imageUrl,
+          image : "",
           text : this.postText,
           timestamp : new Date().toDateString(),
           username : "Anonymous"
         };
+
         // parent_id, image, text, timestamp, username
         this.postservice.addPost(this.newPost).subscribe(
           (response) => {
