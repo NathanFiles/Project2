@@ -71,7 +71,7 @@ export class MakeThreadComponent implements OnInit {
           (response) => {
             this.newPost = <post> response;
             // this.router.navigateByUrl("/threads/" + this.newPost.t_id + "/" + this.newPost.p_id);
-            this.router.navigateByUrl("/threads/" + this.newPost.t_id);
+            this.router.navigateByUrl("/threads/" + this.newPost.t_id + "/" + this.newPost.p_id);
           },
           (response) => {
             console.log()
