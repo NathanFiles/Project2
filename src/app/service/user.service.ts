@@ -15,8 +15,8 @@ export class UserService {
 
 
   // host :string = "http://ec2-3-19-227-34.us-east-2.compute.amazonaws.com:8080/";
-  // host :string = "http://ec2-18-218-37-90.us-east-2.compute.amazonaws.com:8080/";
-  host :string = "http://localhost:8080";
+  host :string = "http://ec2-18-218-37-90.us-east-2.compute.amazonaws.com:8080/";
+  // host :string = "http://localhost:8080";
 
   login(usernameIn: string, passwordIn: string) : Observable<user> {
     let fd = new FormData();
