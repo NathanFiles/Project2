@@ -15,7 +15,13 @@ export class GridComponent implements OnInit {
   constructor(private postservice :PostService) { }
   
   threadformon: boolean = false;
-  openThreadForm() { this.threadformon=true; }
+  openThreadForm() { 
+    if (this.threadformon) {
+      this.threadformon=false;
+    } else {
+      this.threadformon=true;
+    }
+   }
 
   activeheaders :post[] = [];
 
