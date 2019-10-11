@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
-import { Observable } from 'rxjs';
+import { Observable, BehaviorSubject } from 'rxjs';
 import { post } from '../model/post';
 
 @Injectable({
@@ -8,8 +8,28 @@ import { post } from '../model/post';
 })
 export class PostService {
   private headers = new HttpHeaders({'Content-Type': 'application/json'});
-  constructor(private http :HttpClient) { }
+  
+  activepost :post = {
+    p_id: 0,
+    t_id: 0,
+    parent_id: 0,
+    timestamp: "",
+    username: "",
+    image: "",
+    text: ""
 
+  };
+  activereplies :post[];
+
+  observablePost;
+  
+  constructor(private http :HttpClient) {
+    this.observablePost = new BehaviorSubject<post>(this.activepost);
+  }
+
+  eventChange() {
+    this.observablePost.next(this.activepost);
+  }
 
   threadnum = -1;
   // host :string = "http://ec2-3-19-227-34.us-east-2.compute.amazonaws.com:8080/";
@@ -53,17 +73,6 @@ export class PostService {
     return obs;
   }
 
-  activepost :post = {
-    p_id: 0,
-    t_id: 0,
-    parent_id: 0,
-    timestamp: "",
-    username: "",
-    image: "",
-    text: ""
-  };
-
-  activereplies :post[];
 
   loadThread(param) {
 
@@ -72,6 +81,7 @@ export class PostService {
       (response) => {
         console.log(response);
         this.activepost = response;
+        this.eventChange();
         console.log(this.activepost);
 
         this.loadReplies(this.activepost.p_id);
