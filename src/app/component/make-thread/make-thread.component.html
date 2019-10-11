@@ -11,7 +11,8 @@
         </tr> -->
         <tr>
             <th>Comment:</th>
-            <td id="post"><textarea id="postText" [(ngModel)] = "postText" (focus) = "changeText(true)" (blur) = "changeText(false)">Say something...</textarea></td>
+            <td id="post"><textarea id="postText" maxlength="500" [(ngModel)] = "postText" (focus) = "changeText(true)" (blur) = "changeText(false)">Say something...</textarea></td>
+            <!-- <td id="post"><textarea id="postText" (focus) = "changeDefaultInput(postText)">Say something...</textarea></td> -->
         </tr>
         <tr>
             <th>Image URL:</th>
@@ -28,7 +29,6 @@
     </div>
 
     <div id="new-line"></div>
-  
     <button id="completeThread" (click) = "createThread()" >Create thread</button>
     <!-- <h2>Enter Thread Information</h2>
     <p>Thread name:<input id="threadName" type="text"/></p>

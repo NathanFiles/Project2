@@ -1,10 +1,5 @@
 <div id="post">
-        <p class="hidden">{{this.postservice.activepost.timestamp}}</p>
-        <p class="hidden">{{this.postservice.activepost.p_id}}</p>
-        <p class="hidden">{{this.postservice.activepost.username}}</p>
-    <p class="line" id="timestamp">{{this.postservice.activepost.timestamp}}</p>
-    <p>#{{this.postservice.activepost.p_id}}</p>
-    <h3 class="line">{{this.postservice.activepost.username}}</h3>
-    <img src={{this.postservice.activepost.image}} style="width: 95%;">
-    <p>{{this.postservice.activepost.text}}</p>
+    <p id="info"><span id="user">{{this.postservice.activepost.username}}</span> <span id="timestamp">{{this.postservice.activepost.timestamp}}</span> #<span id="number">{{this.postservice.activepost.p_id}}</span></p>
+    <img src={{this.postservice.activepost.image}}>
+    <p id="text">{{this.postservice.activepost.text}}</p>
 </div>

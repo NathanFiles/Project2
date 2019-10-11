@@ -1,21 +1,46 @@
 #post{
-    border-style: double;
-
+    text-align: center;
+    height: 100%;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
 
-.line{
-    display: inline;
+p {
+    padding: 0;
+    margin: 0;
+}
+
+#info {
+    margin-top: 1%;
+}
+
+span {
+    margin-right: 3px;
+}
+
+#user {
+    font-weight: bold;
 }
 
 #timestamp{
-    float: right;
-    margin-right: 5vh;
+    
 }
 
-.replybox{
-    height: 20vh;
-    border-style: double;
-    margin-right: 5vh;
-    white-space: nowrap;
-    /* vertical-align:top; */
+#number {
+    font-weight: bold;
+}
+
+img {
+    max-width: 100%;
+    margin: auto;
+}
+
+#text {
+    text-align: left;
+    max-width: 100%;
+    padding: 2%;
+    overflow-wrap: break-word;
 }
