@@ -1,0 +1,25 @@
+<div id="register" style="border: 2px solid blue;">
+
+    <h3>Please Register</h3>
+    <table>
+        <tr>
+            <th>Username:</th>
+        
+            <td id="username"><input type="text" [(ngModel)]="username" placeholder="username"/></td>
+        </tr>
+
+        <tr>
+            <th>Password:</th>
+        
+            <td id="password1"><input type="text" [(ngModel)]="password1" placeholder="Password"/></td>
+        </tr>
+
+        <tr>
+            <th>Re-enter the Password:</th>
+        
+            <td id="password2"><input type="text" [(ngModel)]="password2" placeholder="Password"/></td>
+        </tr>
+
+    </table>
+    <button (click)="registerNewUser()">Register</button>
+</div>
