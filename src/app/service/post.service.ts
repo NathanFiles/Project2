@@ -33,8 +33,8 @@ export class PostService {
 
   threadnum = -1;
   // host :string = "http://ec2-3-19-227-34.us-east-2.compute.amazonaws.com:8080/";
-  // host :string = "http://ec2-18-218-37-90.us-east-2.compute.amazonaws.com:8080"
-  host :string = "http://localhost:8080";
+  host :string = "http://ec2-18-218-37-90.us-east-2.compute.amazonaws.com:8080"
+  // host :string = "http://localhost:8080";
 
   getPost(p_id :number) :Observable<post> {
     return this.http.get<post>(this.host+"/posts/"+p_id);
@@ -71,6 +71,15 @@ export class PostService {
     let obs = this.http.post(this.host+"/posts/create", fd);
     this.currentPicture = null;
     return obs;
+  }
+
+  
+  updatePost(postVar: post) {
+    return this.http.put<post>(this.host+"/posts", postVar, {headers: this.headers});
+  }
+
+  deletePost(postVar: post) {
+    return this.http.delete<post>(this.host+"/posts/"+postVar.p_id);
   }
 
 
