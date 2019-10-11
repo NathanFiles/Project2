@@ -11,6 +11,7 @@ import { ThreadComponent } from './component/thread/thread.component';
 import { GridComponent } from './component/grid/grid.component';
 import { CreateReplyComponent } from './component/create-reply/create-reply.component';
 import { MakeThreadComponent } from './component/make-thread/make-thread.component';
+import { RegisterComponent } from './component/register/register.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { MakeThreadComponent } from './component/make-thread/make-thread.compone
     ThreadComponent,
     GridComponent,
     CreateReplyComponent,
-    MakeThreadComponent
+    MakeThreadComponent,
+    RegisterComponent
   ],
   imports: [
     BrowserModule,
