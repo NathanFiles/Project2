@@ -72,7 +72,7 @@ export class MakeThreadComponent implements OnInit {
           image : "",
           text : this.postText,
           timestamp : new Date().toDateString() + " " + time,
-          username : "Anonymous"
+          username : JSON.parse(localStorage.getItem('currentUser')).username
         };
 
         this.postservice.addPost(this.newPost).subscribe(

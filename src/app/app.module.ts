@@ -12,6 +12,7 @@ import { GridComponent } from './component/grid/grid.component';
 import { CreateReplyComponent } from './component/create-reply/create-reply.component';
 import { MakeThreadComponent } from './component/make-thread/make-thread.component';
 import { RegisterComponent } from './component/register/register.component';
+import { LoginComponent } from './component/login/login.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { RegisterComponent } from './component/register/register.component';
     GridComponent,
     CreateReplyComponent,
     MakeThreadComponent,
-    RegisterComponent
+    RegisterComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
