@@ -1,19 +1,25 @@
-
 #banner {
     position:absolute;
     left:0%;
     top:0%;
     width:100%;
+    height: 50px;
     background-color: darkgoldenrod;
     box-shadow: black 0px 4px;
 }
 
-h1 {
-    margin:8px;
-    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+img {
+    height: 90%;
+    position: relative;
+    top: 8px;
 }
 
 a {
     text-decoration: none;
-    color: black
+    color: black;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-size: 40px;
+    font-weight: bold;
+    position: relative;
+    top: -5px;
 }

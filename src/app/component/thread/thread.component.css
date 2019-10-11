@@ -1,23 +1,37 @@
-.wrap {
-    display:flex;
+#button {
+    height: 15%;
+    min-height: 50px;
+    width: auto;
+    max-width: 41px;
+    margin-right: 3px;
+    position: relative;
+    top: 40%;
+}
+
+#view {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
 }
 
 .box {
-    height: 90vh;
+    height: 100%;
 }
 
 #leftbox {
-    width: 45vw;
-    /* overflow:hidden; hide the scrollbar in the left box */
+    max-width: 40vw;
+    overflow: hidden; /*hide the scrollbar in the left box*/
 }
 
 #divider {
-    width:5vw;
+    width:1vw;
 }
         
 #rightbox {
-    width: 50vw;
-    overflow-y:scroll;  /*show the scrollbar in the right box*/
+    overflow-y: auto;  /*show the scrollbar in the right box*/
     overflow-x: hidden;
+    min-width: 50vw;
+    border: 1px solid red;
 }
         
