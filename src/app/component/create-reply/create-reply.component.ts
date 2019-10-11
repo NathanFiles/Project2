@@ -44,7 +44,8 @@ export class CreateReplyComponent implements OnInit {
         image : "",
         text : this.replyText,
         timestamp : today.toDateString() + " " + time,
-        username : "Anonymous"
+        username : JSON.parse(localStorage.getItem('currentUser')).username
+
       };
       console.log(this.replyPost);
 

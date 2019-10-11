@@ -10,6 +10,17 @@
     vertical-align: bottom;
 }
 
+
+.log-btn {
+    display: flex;
+    float: left;
+    
+}
+#response-text {
+    display: flex;
+    float: left;
+}
+
 img {
     max-width: 100%;
     max-height: 100%;

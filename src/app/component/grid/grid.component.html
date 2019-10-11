@@ -1,5 +1,13 @@
+
+
 <div id="threads">
-    <button id="new-thread" (click) = "openThreadForm()">Create new thread</button><br><br>
+
+        <app-login *ngIf="loginclicked && !loggedin"></app-login>
+        <button *ngIf="!loggedin" id="login-btn" class="log-btn" (click) = "showLogin()">Login</button>
+        <button *ngIf="loggedin" id="logout-btn" class="log-btn" (click) = "this.userService.logout()">Logout</button>
+        <button id="new-thread" (click) = "openThreadForm()">Create new thread</button>
+        <p id="response-text">{{responseText}}</p>
+    
     <app-make-thread *ngIf="threadformon"></app-make-thread>
     <br>
     <span id="instance" *ngFor='let th of this.activeheaders'><a href="thread/{{th.t_id}}/{{th.p_id}}">
