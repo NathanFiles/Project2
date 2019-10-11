@@ -67,12 +67,10 @@ export class MakeThreadComponent implements OnInit {
           username : "Anonymous"
         };
 
-        // parent_id, image, text, timestamp, username
         this.postservice.addPost(this.newPost).subscribe(
           (response) => {
             this.newPost = <post> response;
-            // this.router.navigateByUrl("/threads/" + this.newPost.t_id + "/" + this.newPost.p_id);
-            this.router.navigateByUrl("/threads/" + this.newPost.t_id);
+            this.router.navigateByUrl("/thread/" + this.newPost.t_id + "/" + this.newPost.p_id);
           },
           (response) => {
             console.log()
