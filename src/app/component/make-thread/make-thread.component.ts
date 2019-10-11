@@ -14,32 +14,40 @@ import { PostService } from 'src/app/service/post.service';
 })
 export class MakeThreadComponent implements OnInit {
 
+  constructor(private route :ActivatedRoute, private threadservice :ThreadService, private postservice :PostService, private router :Router) { }
+
+  ngOnInit() {
+  }
 
   title: string;
   postText: string;
-  picture;
-
 
   newPost: post = null;
   newThread: thread = null;
+  
 
+  defaultPostText: string = "Say something...";
 
   onSelected(event){
     this.postservice.currentPicture = <File> event.target.files[0];
+    let input = this.postservice.currentPicture;
+    var reader :FileReader = new FileReader();
+    reader.onload = function() {
+      var dataURL = reader.result;
+      var output = document.getElementById('postImage');
+      output.setAttribute("src", <string> dataURL);
+    };
+    reader.readAsDataURL(input);
   }
 
-  addThread() {
+  createThread() {
     console.log("pic:");
-    console.log(this.picture);
-
-
-
     // console.log(this.title);
     // console.log(this.postText);
     // console.log(this.imageUrl);
 
     this.newThread = {
-      t_id : 9991,
+      t_id : 0,
       num_posts : 1,
       active : 1
     };
@@ -73,14 +81,8 @@ export class MakeThreadComponent implements OnInit {
             this.router.navigateByUrl("/thread/" + this.newPost.t_id + "/" + this.newPost.p_id);
           },
           (response) => {
-            console.log()
             console.log(response);
             console.log(this.newPost);
-            
-            // console.log(this.newPost);
-            // console.log(this.newPost);
-            // console.log(this.newPost);
-    
             console.log("Something went wrong when adding post: " + this.newPost);
           }
         );
@@ -94,14 +96,6 @@ export class MakeThreadComponent implements OnInit {
 
     
   }
-
-  constructor(private route :ActivatedRoute, private threadservice :ThreadService, private postservice :PostService, private router :Router) { }
-  // constructor(private postservice: GetPostService) { }
-
-  ngOnInit() {
-  }
-
-  defaultPostText: string = "Say something...";
 
   changeDefaultInput(id: string) {
     // let input = (<HTMLInputElement>document.getElementById("threadName"));
@@ -128,30 +122,5 @@ export class MakeThreadComponent implements OnInit {
       input.textContent = this.defaultPostText;
     }
   }
-
-  // allPokemon: Observable<pokemon> = this.poke.getAllPokemon();
-
-  // polkamans: Array<pokemon> = new Array<pokemon>();
-
-  // showAllPokemon() {
-  //   this.allPokemon.subscribe(
-  //     //1. function to execute when the Observable receives information
-  //     (response) => {
-  //       console.log(response);
-  //       // this.polkamans.push(response);
-  //     },
-  //     //2. function to execute when the Observable receives incorrect/faulty information
-  //     (response) => {
-  //       // console.log("Sorry it failed");
-  //       return "Sorry it failed";
-  //     }
-  //     //3. optional function for what to do when the call is complete
-  //     // () => {
-  //     //   console.log("whatever");
-  //     // }
-  //   );
-  // }
-
-
 
 }
