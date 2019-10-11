@@ -75,7 +75,6 @@ export class MakeThreadComponent implements OnInit {
           username : "Anonymous"
         };
 
-        // parent_id, image, text, timestamp, username
         this.postservice.addPost(this.newPost).subscribe(
           (response) => {
             this.newPost = <post> response;

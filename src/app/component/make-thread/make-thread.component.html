@@ -2,31 +2,25 @@
     <table id="new-thread">
         <tr>
             <th>Name:</th>
-            <!-- Aonymous is a placeholder value, figure out how to put user's name if they are logged in after basic functionality complete -->
-            <!-- <td id="username">Anonymous</td> -->
+        
             <td id="username"><input type="text" readonly value="Anonymous"/></td>
         </tr>
-        <tr>
+        <!-- <tr>
             <th>Subject:</th>
             <td id="subject"><input type="text" [(ngModel)] = "title"/></td>
-        </tr>
+        </tr> -->
         <tr>
             <th>Comment:</th>
             <td id="post"><textarea id="postText" [(ngModel)] = "postText" (focus) = "changeText(true)" (blur) = "changeText(false)">Say something...</textarea></td>
-            <!-- <td id="post"><textarea id="postText" (focus) = "changeDefaultInput(postText)">Say something...</textarea></td> -->
         </tr>
         <tr>
             <th>Image URL:</th>
-            <!-- <td id="image-url"><input type="text" [(ngModel)] = "imageUrl" /></td> -->
             <td id="image-url"><input type="file" [(ngModel)] = "picture" (change)="onSelected($event)"/></td>
         </tr>
-        <!-- <tr>
-            <th>File</th>
-            <td id="file"><button id="uploadFile" (click) = "uploadFile()">Upload file</button></td>
-        </tr> -->
+       
     </table>
 
-    <!-- <div id="divider"></div> -->
+
 
     <div>
         <!-- <a href="{{imageUrl}}"></a> -->
