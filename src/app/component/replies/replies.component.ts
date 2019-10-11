@@ -33,7 +33,7 @@ export class RepliesComponent implements OnInit {
   }
 
   loadReply(reply :post) {
-    this.router.navigateByUrl("/threads/"+reply.t_id+"/"+reply.p_id);
+    this.router.navigateByUrl("/thread/"+reply.t_id+"/"+reply.p_id);
   }
 
   

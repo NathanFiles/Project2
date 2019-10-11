@@ -33,13 +33,17 @@ export class CreateReplyComponent implements OnInit {
   
     postReply(){
       
+      var today = new Date();
+      var time = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
+
+
       this.replyPost = {
         p_id : 999999,
         t_id : this.replyService.threadnum,
         parent_id : this.replyService.activepost.p_id,
         image : "",
         text : this.replyText,
-        timestamp : new Date().toDateString(),
+        timestamp : today.toDateString() + " " + time,
         username : "Anonymous"
       };
       console.log(this.replyPost);
