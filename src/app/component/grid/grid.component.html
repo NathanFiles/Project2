@@ -1,3 +1,25 @@
+<!-- <button mat-button id="login-btn" *ngIf="!loggedin" class="log-btn" (click) = "showLogin()">Login</button>
+
+<div id="loginform" cdkDrag>
+    <app-login *ngIf="loginclicked && !loggedin"></app-login>
+    <button *ngIf="loggedin" id="logout-btn" class="log-btn" (click) = "this.userService.logout()">Logout</button>
+</div>
+
+<div id="threads">
+    <div id="newthreadform">
+        <button mat-button id="new-thread" (click) = "openThreadForm()">Create new thread</button>
+        <p id="response-text">{{responseText}}</p>
+        <app-make-thread *ngIf="threadformon"></app-make-thread>
+    </div>
+    <br>
+    <span id="instance" *ngFor='let th of this.activeheaders'><a href="thread/{{th.t_id}}/{{th.p_id}}">
+        <img id="threadimg" src={{th.image}}>
+        <p id="number">#{{th.t_id}}</p>
+        <p id="text">{{th.text}}</p>
+    </a></span> -->
+
+<div id="logohead"></div>
+<div id="logowings"></div>
 
 <div *ngIf="!loggedin" >
     <button id="login-btn" class="btn" (click) = "showLogin()">Login</button><br><br>

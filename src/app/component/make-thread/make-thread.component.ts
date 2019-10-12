@@ -29,7 +29,7 @@ export class MakeThreadComponent implements OnInit {
 
   defaultPostText: string = "Say something...";
 
-  onSelected(event){
+  onSelected(event) {
     this.postservice.currentPicture = <File> event.target.files[0];
     let input = this.postservice.currentPicture;
     var reader :FileReader = new FileReader();
@@ -37,6 +37,7 @@ export class MakeThreadComponent implements OnInit {
       var dataURL = reader.result;
       var output = document.getElementById('postImage');
       output.setAttribute("src", <string> dataURL);
+      window.location.href = "grid#new-thread";
     };
     reader.readAsDataURL(input);
   }
@@ -121,6 +122,15 @@ export class MakeThreadComponent implements OnInit {
       input.textContent = "";
     } else if (input.textContent === "") {
       input.textContent = this.defaultPostText;
+    }
+  }
+
+  textChanged() {
+    console.log("triggers");
+    if ((<HTMLInputElement>document.getElementById("postText")).textContent==="") {
+      (<HTMLInputElement>document.getElementById("completeThread")).disabled = true;
+    } else {
+      (<HTMLInputElement>document.getElementById("completeThread")).disabled = false;
     }
   }
 

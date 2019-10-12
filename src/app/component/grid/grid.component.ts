@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
 import { PostService } from 'src/app/service/post.service';
 import { post } from 'src/app/model/post';
 import { ThreadService } from 'src/app/service/thread.service';
@@ -23,14 +22,16 @@ export class GridComponent implements OnInit {
 
   showLogin() {
     this.loginclicked = true; 
-    // document.getElementById("login-btn").remove();
 
   }
-  openThreadForm() { 
-    this.threadformon=true;
-    document.getElementById("new-thread").remove();
 
-   }
+  openThreadForm() { 
+    if (this.threadformon) {
+      this.threadformon=false;
+    } else {
+      this.threadformon=true;
+    }
+  }
 
   charLimit(threadText) {
     if (threadText.length > 40) {
@@ -80,7 +81,6 @@ export class GridComponent implements OnInit {
     if (localStorage.getItem('responseText') === "Invalid credentials, please try again.") {  //This makes it so that "Invalid" message only appears the first time
       localStorage.setItem('responseText', "");
     }
-
     this.responseText = localStorage.getItem('responseText');
 
 

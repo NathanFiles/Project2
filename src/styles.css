@@ -8,5 +8,8 @@ body {
     height: 100%;
     margin: 0;
     padding: 0;
-    background-color: rgb(210, 197, 140);
+    background-image: url("assets/img/background.png");
+    background-size: 100% 100%;
+    background-attachment: fixed;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;;
 }

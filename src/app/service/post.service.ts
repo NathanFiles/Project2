@@ -71,7 +71,6 @@ export class PostService {
     this.currentPicture = null;
     return obs;
   }
-
   
   updatePost(postVar: post) {
     return this.http.put<post>(this.host+"/posts", postVar, {headers: this.headers});
@@ -80,7 +79,6 @@ export class PostService {
   deletePost(postVar: post) {
     return this.http.delete<post>(this.host+"/posts/"+postVar.p_id);
   }
-
 
   loadThread(param) {
 

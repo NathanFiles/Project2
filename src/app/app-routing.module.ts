@@ -3,7 +3,7 @@ import { Routes, RouterModule } from '@angular/router';
 import { GridComponent } from './component/grid/grid.component';
 import { ThreadComponent } from './component/thread/thread.component';
 import { RegisterComponent } from './component/register/register.component';
-import { UserlistComponent } from './component/userlist/userlist.component';
+import { UserlistComponent } from './component/userlist/userlist.component'
 
 
 const routes: Routes = [

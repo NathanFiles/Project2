@@ -13,6 +13,10 @@ import { CreateReplyComponent } from './component/create-reply/create-reply.comp
 import { MakeThreadComponent } from './component/make-thread/make-thread.component';
 import { RegisterComponent } from './component/register/register.component';
 import { LoginComponent } from './component/login/login.component';
+import { DragDropModule } from '@angular/cdk/drag-drop';
+import { MatButtonModule } from "@angular/material";
+import { MatDialogModule } from "@angular/material";
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { UserlistComponent } from './component/userlist/userlist.component';
 
 @NgModule({
@@ -33,6 +37,10 @@ import { UserlistComponent } from './component/userlist/userlist.component';
     AppRoutingModule,
     HttpClientModule,
     FormsModule,
+    DragDropModule,
+    MatButtonModule,
+    MatDialogModule,
+    BrowserAnimationsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

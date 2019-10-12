@@ -1,8 +1,52 @@
-
-#image{
+.replybox {
     height: 20vh;
+    border-style: double;
+    margin-right: 5vh;
+    white-space: nowrap;
+    cursor: pointer;
+    width: calc(99%);
+}
+
+#imagearea {
+    width: 20%;
+    height: 100%;
     float: left;
-    padding-inline-end: 2vh;    /* this adds space between the image and the text */
+    padding: 0;
+    margin: 0;
+    margin-right: 2%;
+    display: flex;
+    justify-content: space-evenly;
+    background-color: rgb(243, 217, 162);
+    border-style: groove;
+    border-width: 0 3px 0 0;
+}
+
+img {
+    max-height: 100%;
+    max-width: 100%;
+    margin: auto;
+}
+
+#info {
+    width: 78%;
+    height: 5%;
+}
+
+#user {
+    color: blue;
+    font-weight: bold;
+}
+
+#timestamp {
+}
+
+#number {
+    color: rgb(0, 0, 177);
+    font-weight: bold;
+}
+
+span {
+    margin-right: 5px;
 }
 
 /* .header{
@@ -11,20 +55,16 @@
     padding-inline-end: 15%;
 } */
 
-#info {
-    display: flex;
-    margin-top: 1%;
-    justify-content: space-between;
-    /* border-bottom: 1px solid black; */
-    padding-bottom: 10px;
-    padding-right: 5vh;
-    
-}
 
 #text{
+    width: 78%;
+    height: 95%;
     white-space: normal;
+    overflow-wrap: break-word;
     margin: 0;
+    padding-top: 8px
 }
+
 .replybox{
     min-height: 20vh;
     border-style: double;

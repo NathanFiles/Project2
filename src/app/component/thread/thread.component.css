@@ -7,7 +7,6 @@
     position: relative;
     top: 40%;
     cursor: pointer;
-
 }
 
 #view {
@@ -34,9 +33,8 @@
 #rightbox {
     overflow-y: auto;  /*show the scrollbar in the right box*/
     overflow-x: hidden;
+    background-color: rgb(252, 241, 178);
+    border-left-style: inset;
     width: 50vw;
-    
-    border-left: 1px solid black;
-    padding-left: 5vh;
 }
         

@@ -1,12 +1,7 @@
-<div id="replies">
-    <div class="replybox" *ngFor="let reply of this.postservice.activereplies" (click) = "loadReply(reply)">
-        <img id="image" src={{reply.image}}>    
-        <span id="info">
-        <h4 class="header">{{reply.username}}</h4>
-        <p class="header">{{reply.timestamp}}</p>
-        <h4 class="header">{{'#' + reply.p_id}}</h4>
-        </span>
-
+<div class="replybox" *ngFor="let reply of this.postservice.activereplies" (click) = "loadReply(reply)">
+    <div id="imagearea"><img src={{reply.image}}></div>
+    <div id="content">
+        <div id="info"><span id="user">{{reply.username}}</span><span id="timestamp">{{reply.timestamp}}</span><span id="number">#{{reply.p_id}}</span></div>
         <p id="text">{{reply.text}}</p>
     </div>
 </div>
