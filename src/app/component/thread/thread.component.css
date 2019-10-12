@@ -21,14 +21,13 @@
 }
 
 #leftbox {
-    max-width: 40vw;
     overflow: hidden;
+    max-width: 50vw;
 }
 
 #divider {
     width:1vw;
 }
-        
 
 #rightbox {
     overflow-y: auto;  /*show the scrollbar in the right box*/
