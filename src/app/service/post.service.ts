@@ -73,6 +73,7 @@ export class PostService {
     return obs;
   }
 
+
   loadThread(param) {
 
     this.threadnum = param.thread;

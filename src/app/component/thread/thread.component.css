@@ -6,6 +6,7 @@
     margin-right: 3px;
     position: relative;
     top: 40%;
+    cursor: pointer;
 }
 
 #view {
@@ -32,6 +33,7 @@
     overflow-y: auto;  /*show the scrollbar in the right box*/
     overflow-x: hidden;
     min-width: 50vw;
-    border: 1px solid red;
+    background-color: rgb(252, 241, 178);
+    border-left-style: inset;
 }
         

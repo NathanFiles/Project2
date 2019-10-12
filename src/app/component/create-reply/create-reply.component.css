@@ -17,5 +17,6 @@
 }
 #replydiv{
     border: 1px solid blue;
-    width : 60%;
+    width : calc(100%-1px);
+    background-color: rgb(252, 241, 178);
 }

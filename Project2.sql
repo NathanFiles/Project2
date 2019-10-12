@@ -92,5 +92,6 @@ CREATE SEQUENCE u_id_maker
 
 SELECT * FROM threads;
 SELECT * FROM posts;
+SELECT * FROM userlist;
 
 commit;

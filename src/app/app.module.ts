@@ -12,6 +12,12 @@ import { GridComponent } from './component/grid/grid.component';
 import { CreateReplyComponent } from './component/create-reply/create-reply.component';
 import { MakeThreadComponent } from './component/make-thread/make-thread.component';
 import { RegisterComponent } from './component/register/register.component';
+import { LoginComponent } from './component/login/login.component';
+
+import { DragDropModule } from '@angular/cdk/drag-drop';
+import { MatButtonModule } from "@angular/material";
+import { MatDialogModule } from "@angular/material";
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
@@ -22,13 +28,18 @@ import { RegisterComponent } from './component/register/register.component';
     GridComponent,
     CreateReplyComponent,
     MakeThreadComponent,
-    RegisterComponent
+    RegisterComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
     FormsModule,
+    DragDropModule,
+    MatButtonModule,
+    MatDialogModule,
+    BrowserAnimationsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

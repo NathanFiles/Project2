@@ -31,9 +31,9 @@ export class ThreadComponent implements OnInit {
     console.log(this.postservice.activepost.parent_id)
     let button = document.getElementById("button");
     if (newPost.parent_id==0) {
-      button.setAttribute("src", "https://i.imgur.com/QsuTzcL.png")
+      button.setAttribute("src", "assets/img/homebutton.png")
     } else {
-      button.setAttribute("src", "https://i.imgur.com/XLnEtYW.png")
+      button.setAttribute("src", "assets/img/backbutton.png")
     }
   }
 }

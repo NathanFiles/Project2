@@ -1,6 +1,6 @@
 <div id="replydiv">
 <p style="font-weight: bold; margin-left: 5px">Your Reply:</p>
-<div id="replyPicture"><input type="file" [(ngModel)]="picture" (change)="onSelected($event)" >
+<div id="replyPicture"><input type="file" [(ngModel)]="picture" (change)="onSelected($event)">
 <textarea id="replyareatext" [(ngModel)]="replyText" placeholder="Say something!">{{replyText}}</textarea>
 </div>
 <button id="replybutton" (click)="postReply()">Post</button>
