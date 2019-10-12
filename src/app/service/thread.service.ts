@@ -26,5 +26,12 @@ export class ThreadService {
     return this.http.post<thread>(this.host+"/threads", threadVar, {headers: this.headers});
   }
 
-
+  
+  updateThread(threadVar: thread) : Observable<thread> {
+    return this.http.put<thread>(this.host+"/threads", threadVar, {headers: this.headers});
+  }
+  
+  deleteThread(threadVar: thread) : Observable<thread> {
+    return this.http.delete<thread>(this.host+"/threads/"+threadVar.t_id);
+  }
 }
