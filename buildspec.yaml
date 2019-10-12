@@ -17,6 +17,8 @@ phases:
       - npm install --save-dev @angular-devkit/build-angular
       
       - npm install @angular/cdk
+      
+      - ng add @angular/material
 
     build:
 
