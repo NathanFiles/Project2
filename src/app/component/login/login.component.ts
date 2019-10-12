@@ -10,10 +10,15 @@ import { user } from 'src/app/model/user';
 export class LoginComponent implements OnInit {
   username:string = "";
   password:string = "";
+  responseText = "";
 
   constructor(private userService : UserService) { }
 
   ngOnInit() {
+    if (localStorage.getItem('responseText') === "Invalid credentials, please try again.") {  //This makes it so that "Invalid" message only appears the first time
+      localStorage.setItem('responseText', "");
+    }
+    this.responseText = localStorage.getItem('responseText');
   }
 
   login() {

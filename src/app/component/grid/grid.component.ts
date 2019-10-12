@@ -18,7 +18,6 @@ export class GridComponent implements OnInit {
   threadformon: boolean = false;
   loginclicked: boolean = false;
   loggedin: boolean = false;
-  responseText = "";
 
   showLogin() {
     this.loginclicked = true; 
@@ -78,10 +77,7 @@ export class GridComponent implements OnInit {
       this.admin = true;
     } 
 
-    if (localStorage.getItem('responseText') === "Invalid credentials, please try again.") {  //This makes it so that "Invalid" message only appears the first time
-      localStorage.setItem('responseText', "");
-    }
-    this.responseText = localStorage.getItem('responseText');
+    
 
 
 
