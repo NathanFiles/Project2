@@ -1,5 +1,9 @@
 <div id="post">
-    <p id="info"><span id="user">{{this.postservice.activepost.username}}</span> <span id="timestamp">{{this.postservice.activepost.timestamp}}</span> #<span id="number">{{this.postservice.activepost.p_id}}</span></p>
-    <img src={{this.postservice.activepost.image}}>
+    <p id="info"><span id="user">{{this.postservice.activepost.username}}</span> <span id="timestamp">{{this.postservice.activepost.timestamp}}</span> <span id="number">{{'#' + this.postservice.activepost.p_id}}</span></p>
+    <div class="image-container"> 
+        <img src={{this.postservice.activepost.image}}>
+        <button *ngIf="moderator" class="delete-btn" (click) = "removePost()">×</button>
+    </div>
     <p id="text">{{this.postservice.activepost.text}}</p>
+
 </div>

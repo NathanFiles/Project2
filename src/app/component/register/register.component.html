@@ -1,25 +1,28 @@
 <div id="register" style="border: 2px solid blue;">
-
-    <h3>Please Register</h3>
+    <div  style="padding-bottom: 30px; padding-left: 10px;">
+    <h4>Registration Page</h4>
+    <p *ngIf="badPass" style="color: red;">Passwords do not match, please try again.</p>
+    <p *ngIf="duplicateUser" style="color: red;">Registration failed. The username may already be taken.</p>
     <table>
         <tr>
-            <th>Username:</th>
+            <td class="label">Username:</td>
         
             <td id="username"><input type="text" [(ngModel)]="username" placeholder="username"/></td>
         </tr>
 
         <tr>
-            <th>Password:</th>
+            <td class="label">Password:</td>
         
             <td id="password1"><input type="password" [(ngModel)]="password1" placeholder="Password"/></td>
         </tr>
 
         <tr>
-            <th>Re-enter the Password:</th>
+            <td class="label">Confirm password:</td>
         
             <td id="password2"><input type="password" [(ngModel)]="password2" placeholder="Password"/></td>
         </tr>
 
     </table>
     <button (click)="registerNewUser()">Register</button>
+    </div>
 </div>

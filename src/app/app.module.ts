@@ -13,6 +13,7 @@ import { CreateReplyComponent } from './component/create-reply/create-reply.comp
 import { MakeThreadComponent } from './component/make-thread/make-thread.component';
 import { RegisterComponent } from './component/register/register.component';
 import { LoginComponent } from './component/login/login.component';
+import { UserlistComponent } from './component/userlist/userlist.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import { LoginComponent } from './component/login/login.component';
     CreateReplyComponent,
     MakeThreadComponent,
     RegisterComponent,
-    LoginComponent
+    LoginComponent,
+    UserlistComponent
   ],
   imports: [
     BrowserModule,

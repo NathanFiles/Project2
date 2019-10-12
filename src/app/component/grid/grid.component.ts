@@ -13,8 +13,9 @@ import { UserService } from 'src/app/service/user.service';
 })
 export class GridComponent implements OnInit {
 
-  constructor(private postservice :PostService, private userService: UserService) { }
-  
+  constructor(private postservice :PostService, private threadservice: ThreadService, private userService: UserService) { }
+  moderator: boolean = false;
+  admin: boolean = false;
   threadformon: boolean = false;
   loginclicked: boolean = false;
   loggedin: boolean = false;
@@ -22,17 +23,25 @@ export class GridComponent implements OnInit {
 
   showLogin() {
     this.loginclicked = true; 
-    document.getElementById("login-btn").remove();
+    // document.getElementById("login-btn").remove();
 
   }
-
   openThreadForm() { 
-    if (this.threadformon) {
-      this.threadformon=false;
-    } else {
-      this.threadformon=true;
-    }
+    this.threadformon=true;
+    document.getElementById("new-thread").remove();
+
    }
+
+  charLimit(threadText) {
+    if (threadText.length > 40) {
+      return threadText.substring(0,37) + "...";
+    }
+    else {
+      return threadText;
+    }
+  }
+
+  
 
   activeheaders :post[] = [];
 
@@ -61,13 +70,38 @@ export class GridComponent implements OnInit {
     if (activeUser.u_id != 0) {
       this.loggedin = true;
     }
+    if (activeUser.type > 0) {  //moderator or admin spotted
+      this.moderator = true;
+    }
+    if (activeUser.type == 2) {
+      this.admin = true;
+    } 
 
     if (localStorage.getItem('responseText') === "Invalid credentials, please try again.") {  //This makes it so that "Invalid" message only appears the first time
       localStorage.setItem('responseText', "");
     }
+
     this.responseText = localStorage.getItem('responseText');
 
 
+
+  }
+
+  deleteThread(postIn) {
+    let threadIn : thread = {
+      t_id: postIn.t_id,  //only the t_id matters
+      num_posts: 0,
+      active: 0
+    }
+    this.threadservice.deleteThread(threadIn).subscribe(
+      (response) => {
+        window.location.reload();
+      },
+      (response) => {
+        console.log("Error: could not delete thread.");
+        console.log(response);
+      }
+    );
 
   }
 
