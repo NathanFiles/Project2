@@ -28,25 +28,27 @@
 }
 
 
-/* #loginform {
+#loginform {
     position: absolute;
-    top: 5%;
-    left: 5%;
+    top: 12%;
+    left: 1%;
     z-index: 5;
-} */
+}
 
-/* #newthreadform {
+#newthreadform {
     z-index: 2;
     width: 96%;
-    margin: 0 2%; */
+    margin: 0 2%;
+}
 
 #buttons-container {
   display: flex;
   flex-direction: column;
 
 }
+
 .btn {
-  width: 150px;
+    width: 150px;
     background-color: darkorange;
     border: none;
     color: white;
@@ -56,17 +58,17 @@
     height: 30px;
     border-radius: 2px;
     cursor: pointer;
+}
 
-    
+.pos-btn {
+    z-index: 2;
+    position: absolute;
 }
 
 .btn:hover {
   background-color: #4CAF50; /* Green */
   color: white;
 }
-
-
-
 
 #instance {
     /* width:18%; */

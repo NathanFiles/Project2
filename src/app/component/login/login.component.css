@@ -10,6 +10,7 @@
     border: 4px solid red;
     background-color: rosybrown;
     width: 40%;
+    position: relative;
 }
 
 tr {

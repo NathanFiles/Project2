@@ -1,9 +1,6 @@
 <!-- <button mat-button id="login-btn" *ngIf="!loggedin" class="log-btn" (click) = "showLogin()">Login</button>
 
-<div id="loginform" cdkDrag>
-    <app-login *ngIf="loginclicked && !loggedin"></app-login>
-    <button *ngIf="loggedin" id="logout-btn" class="log-btn" (click) = "this.userService.logout()">Logout</button>
-</div>
+
 
 <div id="threads">
     <div id="newthreadform">
@@ -20,28 +17,27 @@
 
 <div id="logohead"></div>
 <div id="logowings"></div>
-
-<div *ngIf="!loggedin" >
-    <button id="login-btn" class="btn" (click) = "showLogin()">Login</button><br><br>
-    <a href="register">
-    <button id="reg-btn" class="btn">Register</button>
-    </a>
+<div>
+    <div *ngIf="!loggedin" >
+        <button id="login-btn" class="btn pos-btn" (click) = "showLogin()">Login</button><br><br>
+        <a href="register">
+        <button id="reg-btn" class="btn pos-btn">Register</button>
+        </a>
+    </div>
+    <button *ngIf="loggedin" id="logout-btn" class="btn pos-btn" (click) = "this.userService.logout()">Logout</button><br><br>
 </div>
-<button *ngIf="loggedin" id="logout-btn" class="btn" (click) = "this.userService.logout()">Logout</button><br><br>
 <a href="userlist">
-    <button *ngIf="admin" id="userlist-btn" class="btn">User Permissions</button><br>
+    <button *ngIf="admin" id="userlist-btn" class="btn pos-btn">User Permissions</button><br>
 </a>
-<p id="response-text">{{responseText}}</p><br>
 
 <div id="threads">
-    <div id="buttons-container">
-        
+    <div id="loginform" cdkDrag>
         <app-login *ngIf="loginclicked && !loggedin"></app-login>
-        
-        <span><button id="new-thread" class="btn" (click) = "openThreadForm()">Create new thread</button></span>
     </div>
-    
-    <app-make-thread *ngIf="threadformon"></app-make-thread>
+    <div id="newthreadform">
+        <button id="new-thread" class="btn" (click) = "openThreadForm()">Create new thread</button>
+        <app-make-thread *ngIf="threadformon"></app-make-thread>
+    </div>
     <br>
     <span id="instance" *ngFor='let th of this.activeheaders'>
         <div class="image-container">

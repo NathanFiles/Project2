@@ -22,7 +22,7 @@
 
 #leftbox {
     max-width: 40vw;
-    overflow: hidden; /*hide the scrollbar in the left box*/
+    overflow: hidden;
 }
 
 #divider {

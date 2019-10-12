@@ -3,6 +3,8 @@
             <th>Username:</th>
        
             <td class="input"><input type="text" [(ngModel)]="username"/></td>
+
+            <td><button id="closelogin">×</button></td>
         </tr>
 
         <tr>
@@ -12,8 +14,12 @@
         </tr>
         <tr>
 
-        <button id="loginButton" (click) = "login()" >Login</button>
-
+            <td>
+                <button id="loginButton" (click) = "login()" >Login</button>
+            </td>
+            <td>
+                <span id="response-text">{{responseText}}</span><br>
+            </td>
         </tr>
        
     </table>

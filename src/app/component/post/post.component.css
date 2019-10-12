@@ -1,9 +1,9 @@
 
 /* moderator 'delete' buttons */
-    .image-container {
-        position: relative;
-        
-    }
+.image-container {
+    max-height: 60%;
+    max-width: 100%;
+}
   /* Style the button and place it on top-left */
   .image-container .delete-btn {
     position: absolute;
@@ -26,16 +26,14 @@
 /* end moderator 'delete' buttons */
 
 
-#post{
-    text-align: center; 
+#post {
+    text-align: center;
     height: 100%;
     padding: 0;
     margin: 0;
     display: flex;
     flex-direction: column;
-    /* justify-content: space-between; */
-    /* justify-content: space-evenly; */
-    margin-top: 10%;
+    justify-content: space-between;
 }
 
 p {
@@ -52,7 +50,6 @@ p {
     display: flex;
     margin-top: 1%;
     justify-content: space-between;
-    /* border-bottom: 1px solid black; */
     padding-bottom: 10px;
     
 }
@@ -75,7 +72,7 @@ span {
 
 #postimg {
     max-width: 100%;
-    max-height: 60%;
+    max-height: 100%;
     margin: auto;
 }
 
