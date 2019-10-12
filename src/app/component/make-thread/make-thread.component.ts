@@ -21,6 +21,7 @@ export class MakeThreadComponent implements OnInit {
 
   title: string;
   postText: string;
+  placeholderName = JSON.parse(localStorage.getItem('currentUser')).username;
 
   newPost: post = null;
   newThread: thread = null;

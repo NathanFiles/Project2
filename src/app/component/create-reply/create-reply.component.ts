@@ -52,6 +52,7 @@ export class CreateReplyComponent implements OnInit {
       this.replyService.addPost(this.replyPost).subscribe(
         (response) => {
           console.log(response);
+          window.location.reload();
         },
         (response) => {
           console.log("Failed.");

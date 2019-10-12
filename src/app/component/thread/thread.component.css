@@ -2,10 +2,12 @@
     height: 15%;
     min-height: 50px;
     width: auto;
-    max-width: 41px;
+    max-height: 120px; 
     margin-right: 3px;
     position: relative;
     top: 40%;
+    cursor: pointer;
+
 }
 
 #view {
@@ -28,10 +30,13 @@
     width:1vw;
 }
         
+
 #rightbox {
     overflow-y: auto;  /*show the scrollbar in the right box*/
     overflow-x: hidden;
-    min-width: 50vw;
-    border: 1px solid red;
+    width: 50vw;
+    
+    border-left: 1px solid black;
+    padding-left: 5vh;
 }
         

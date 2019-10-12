@@ -35,7 +35,7 @@ DROP SEQUENCE u_id_maker;
 
 CREATE TABLE userlist (
     u_id NUMBER(10) PRIMARY KEY,
-    username VARCHAR2(25),
+    username VARCHAR2(25) UNIQUE,
     password VARCHAR2(25),
     type NUMBER(1) DEFAULT 0    --0: regular user  1: moderator  2: admin
 
@@ -94,4 +94,7 @@ SELECT * FROM threads;
 SELECT * FROM posts;
 SELECT * FROM userlist;
 
+
+
+UPDATE userlist SET type = 2 WHERE username = 'admin';
 commit;

@@ -14,9 +14,16 @@ export class UserService {
   constructor(private http :HttpClient) { }
 
 
-  // host :string = "http://ec2-3-19-227-34.us-east-2.compute.amazonaws.com:8080/";
-  host :string = "http://ec2-18-218-37-90.us-east-2.compute.amazonaws.com:8080/";
+  host :string = "http://ec2-3-19-227-34.us-east-2.compute.amazonaws.com:8080/";
   // host :string = "http://localhost:8080";
+
+  getAllUsers() :Observable<user[]> {
+    return this.http.get<user[]>(this.host+"/users");
+  }
+
+  updateUser(userVar: user) {
+    return this.http.put<user>(this.host+"/users", userVar, {headers: this.headers});
+  }
 
   login(usernameIn: string, passwordIn: string) : Observable<user> {
     let fd = new FormData();
@@ -43,9 +50,8 @@ export class UserService {
     };
 
     localStorage.setItem('currentUser', JSON.stringify(anonUser));
+    localStorage.setItem('responseText', "");
     window.location.reload();
-    localStorage.setItem('responseText', "Logged out successfully.");
-
   }
 
 
