@@ -2,5 +2,8 @@
     <p id="info"><span id="user">{{this.postservice.activepost.username}}</span> <span id="timestamp">{{this.postservice.activepost.timestamp}}</span> #<span id="number">{{this.postservice.activepost.p_id}}</span></p>
     <img id="divline" src="assets/img/divline.png">
     <p id="text">{{this.postservice.activepost.text}}</p>
-    <img id="postimg" src={{this.postservice.activepost.image}}>
+    <div class="image-container"> 
+        <img id="postimg" src={{this.postservice.activepost.image}}>
+        <button *ngIf="moderator" class="delete-btn" (click) = "removePost()">×</button>
+    </div>
 </div>

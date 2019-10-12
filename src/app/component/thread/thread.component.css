@@ -2,7 +2,7 @@
     height: 15%;
     min-height: 50px;
     width: auto;
-    max-width: 41px;
+    max-height: 120px; 
     margin-right: 3px;
     position: relative;
     top: 40%;
@@ -29,11 +29,12 @@
     width:1vw;
 }
         
+
 #rightbox {
     overflow-y: auto;  /*show the scrollbar in the right box*/
     overflow-x: hidden;
-    min-width: 50vw;
     background-color: rgb(252, 241, 178);
     border-left-style: inset;
+    width: 50vw;
 }
         

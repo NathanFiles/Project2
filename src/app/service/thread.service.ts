@@ -13,7 +13,6 @@ export class ThreadService {
   constructor(private http :HttpClient) { }
   
   host :string = "http://ec2-3-19-227-34.us-east-2.compute.amazonaws.com:8080/";
-  // host :string = "http://ec2-18-218-37-90.us-east-2.compute.amazonaws.com:8080/";
   // host :string = "http://localhost:8080";
 
   allThreads() : Observable<thread[]> {
@@ -28,5 +27,12 @@ export class ThreadService {
     return this.http.post<thread>(this.host+"/threads", threadVar, {headers: this.headers});
   }
 
-
+  
+  updateThread(threadVar: thread) : Observable<thread> {
+    return this.http.put<thread>(this.host+"/threads", threadVar, {headers: this.headers});
+  }
+  
+  deleteThread(threadVar: thread) : Observable<thread> {
+    return this.http.delete<thread>(this.host+"/threads/"+threadVar.t_id);
+  }
 }

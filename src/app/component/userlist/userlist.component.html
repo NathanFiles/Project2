@@ -1,0 +1,22 @@
+<h4>Change User Permissions</h4>
+<button (click) = "changePermissions()">Submit Changes </button>
+<p *ngIf="submitted">Permissions updated successfully!</p>
+<table>
+        <tr>
+                <th>User ID</th>
+                <th>Username</th>
+                <th>Permissions</th>
+        </tr>
+        <tr *ngFor="let user of users;let i = index">
+                <td>{{user.u_id}}</td>
+                <td>{{user.username}}</td>
+                <td>
+                    <select id="{{i}}" [disabled]="user.username === 'admin' ">
+                            <option value="0" [selected]="user.type === 0">User</option>
+                            <option value="1" [selected]="user.type === 1">Moderator</option>
+                            <option value="2" [selected]="user.type === 2">Administrator</option>
+                    </select>
+                    <!-- {{getType(user.type)}} -->
+                </td>
+        </tr>
+</table>

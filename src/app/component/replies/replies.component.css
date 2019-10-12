@@ -49,6 +49,13 @@ span {
     margin-right: 5px;
 }
 
+/* .header{
+    vertical-align: top;
+    display: inline-block;
+    padding-inline-end: 15%;
+} */
+
+
 #text{
     width: 78%;
     height: 95%;
@@ -56,4 +63,18 @@ span {
     overflow-wrap: break-word;
     margin: 0;
     padding-top: 8px
+}
+
+.replybox{
+    min-height: 20vh;
+    border-style: double;
+    margin-right: 5vh;
+    white-space: nowrap;
+    cursor: pointer;
+    width: 100%;
+}
+#replies {
+    border: 1px solid black;
+    margin-top: 50px;
+    width: 100%;
 }

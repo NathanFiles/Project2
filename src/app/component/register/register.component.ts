@@ -14,11 +14,13 @@ export class RegisterComponent implements OnInit {
   username:string = "";
   constructor(private userService : UserService) { }
 
+  badPass: boolean = false; //this is true if the passwords don't match
+  duplicateUser: boolean = false; //this is true when the registration fails (due to unique constraint on username)
   ngOnInit() {
   }
 
   registerNewUser(){
-    if(this.password2 === this.password1){
+    if(this.password2 == this.password1){
       let newuser: user = {
         u_id: 0,
         username: this.username,
@@ -30,14 +32,19 @@ export class RegisterComponent implements OnInit {
         (response) => {
           let activeUser = <user> response;
           localStorage.setItem('currentUser', JSON.stringify(activeUser));
+          localStorage.setItem('responseText', "Welcome, " + activeUser.username + "!");
+          window.location.href = 'grid';
         },
         (response) => {
+          this.duplicateUser = true;
+          this.badPass = false;
           console.log("registration failure");
         }
       );
 
     } else {
-      // disply the message in the front *passwords don't match*
+      this.badPass = true;
+      this.duplicateUser = false;
     }
     console.log(this.password1);
     console.log(this.password2);
