@@ -20,7 +20,6 @@ export class GridComponent implements OnInit {
   threadformon: boolean = false;
   // loginclicked: boolean = false;
   loggedin: boolean = false;
-
   timeLimitInMinutes = 5;  //the amount of minutes before a thread is inactive
 
   showLogin() {
