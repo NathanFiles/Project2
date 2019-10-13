@@ -18,13 +18,13 @@ export class GridComponent implements OnInit {
   moderator: boolean = false;
   admin: boolean = false;
   threadformon: boolean = false;
-  loginclicked: boolean = false;
+  // loginclicked: boolean = false;
   loggedin: boolean = false;
 
   timeLimitInMinutes = 10;  //the amount of minutes before a thread is inactive
 
   showLogin() {
-    this.loginclicked = true; 
+    this.userService.loginclicked = true; 
 
   }
 

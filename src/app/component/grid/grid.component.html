@@ -32,7 +32,7 @@
 
 <div id="threads">
     <div id="loginform" cdkDrag>
-        <app-login *ngIf="loginclicked && !loggedin"></app-login>
+        <app-login *ngIf="this.userService.loginclicked && !loggedin"></app-login>
     </div>
     <div id="newthreadform">
         <div id="new-thread"><button class="btn" (click) = "openThreadForm()">Create new thread</button></div>

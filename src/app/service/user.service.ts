@@ -13,6 +13,8 @@ export class UserService {
 
   constructor(private http :HttpClient) { }
 
+  loginclicked: boolean = false;
+
 
   host :string = "http://ec2-3-19-227-34.us-east-2.compute.amazonaws.com:8080/";
   // host :string = "http://localhost:8080";
