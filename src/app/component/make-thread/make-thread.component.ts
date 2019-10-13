@@ -64,15 +64,22 @@ export class MakeThreadComponent implements OnInit {
         console.log("active = " + this.newThread.active);
 
         var today = new Date();
-        var time = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
-
-        
+        //force everything to be formatted to two digits
+        var hours = ("0" + today.getHours()).slice(-2);
+        var minutes = ("0" + today.getMinutes()).slice(-2);
+        var seconds = ("0" + today.getSeconds()).slice(-2);
+        var time = hours + ":" + minutes + ":" + seconds;
+        var textIn = "[no text]";
+        if (this.postText != undefined && this.postText != null) {
+          textIn = this.postText;
+        }
+          
         this.newPost = {
           p_id : 1,
           t_id : this.newThread.t_id,
           parent_id : 0,
           image : "",
-          text : this.postText,
+          text : textIn,
           timestamp : new Date().toDateString() + " " + time,
           username : JSON.parse(localStorage.getItem('currentUser')).username
         };

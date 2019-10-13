@@ -3,6 +3,8 @@ import { PostService } from 'src/app/service/post.service';
 import { post } from 'src/app/model/post';
 import { ThreadService } from 'src/app/service/thread.service';
 import { thread } from 'src/app/model/thread';
+import { Observable } from 'rxjs';
+
 import { UserService } from 'src/app/service/user.service';
 
 @Component({
@@ -18,6 +20,8 @@ export class GridComponent implements OnInit {
   threadformon: boolean = false;
   loginclicked: boolean = false;
   loggedin: boolean = false;
+
+  timeLimitInMinutes = 10;  //the amount of minutes before a thread is inactive
 
   showLogin() {
     this.loginclicked = true; 
@@ -41,6 +45,20 @@ export class GridComponent implements OnInit {
     }
   }
 
+
+  lockThread(t_id: number) {
+    this.threadservice.getThread(t_id).subscribe(
+      (response) => {
+        let currThread: thread = response;
+        currThread.active = 0;
+        this.threadservice.updateThread(currThread).subscribe(
+          (resp) => {
+            console.log(currThread);
+          }
+        )
+      }
+    )
+  }
   
 
   activeheaders :post[] = [];
@@ -50,11 +68,47 @@ export class GridComponent implements OnInit {
       (response) => {
         console.log(response);
         this.activeheaders=response;
+        //BEGIN DECAY THREAD CHECK
+        let replies :post[] = [];
+        let today = new Date();
+        for (let i = 0; i < this.activeheaders.length; i++) {
+          let p_id = this.activeheaders[i].p_id;
+          this.postservice.getReplies(p_id).subscribe(
+            (response) => {
+              replies = response;
+              let timestamp = undefined;
+              if (replies[0] != undefined) {
+                timestamp = replies[0].timestamp;
+              }
+              else {
+                timestamp = this.activeheaders[i].timestamp;
+              }
+              let monthString = timestamp.substring(4,7);
+              let month = new Date(Date.parse(monthString +" 1, 0000")).getMonth(); //this turns the month into a number
+              let day = parseInt(timestamp.substring(8,10));
+              let year = parseInt(timestamp.substring(11,15));
+              let fulltime = timestamp.substring(timestamp.length - 8);
+              let times = fulltime.split(":",3);
+
+              let postDate = new Date(year, month, day, parseInt(times[0]), parseInt(times[1]), parseInt(times[2]), 0);
+              var differenceInMinutes = (today.getTime() - postDate.getTime()) / 60000;
+              if (differenceInMinutes > this.timeLimitInMinutes) {
+                this.lockThread(this.activeheaders[i].t_id);
+              }
+            },
+            () => {
+              console.log("Replies not found");
+            }
+          )          
+        }
+        //END DECAY THREAD CHECK
+
       },
       () => {
         console.log("No headers found");
       }
     );
+
 
     let activeUser = JSON.parse(localStorage.getItem('currentUser'));
     if (activeUser == null) {

@@ -35,4 +35,8 @@ export class ThreadService {
   deleteThread(threadVar: thread) : Observable<thread> {
     return this.http.delete<thread>(this.host+"/threads/"+threadVar.t_id);
   }
+
+  getThread(t_id: number) : Observable<thread> {
+    return this.http.get<thread>(this.host+"/threads/" + t_id);
+  }
 }

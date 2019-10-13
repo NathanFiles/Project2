@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router, NavigationEnd } from '@angular/router';
 import { PostService } from 'src/app/service/post.service';
 import { post } from 'src/app/model/post';
+import { thread } from 'src/app/model/thread';
+import { ThreadService } from 'src/app/service/thread.service';
 
 @Component({
   selector: 'app-thread',
@@ -10,13 +12,26 @@ import { post } from 'src/app/model/post';
 })
 export class ThreadComponent implements OnInit {
 
-  constructor(private route :ActivatedRoute, private postservice :PostService, private router :Router) { }
-
+  constructor(private route :ActivatedRoute, private postservice :PostService, private threadservice: ThreadService, private router :Router) { }
+  active : number = 1;
   ngOnInit() {
     this.route.params.subscribe( params =>  this.postservice.loadThread(params));
     this.postservice.observablePost.subscribe(newPost => {
-      this.resetButton(newPost)
+      this.resetButton(newPost);
     })
+
+    //get the current thread to see if it is inactive
+    this.route.params.subscribe( 
+        (params) =>  {
+          this.threadservice.getThread(params.thread).subscribe(
+            (response) => {
+              this.active = response.active;
+            }
+          );
+        }
+    );
+    
+
   }
 
   routeBack() {
