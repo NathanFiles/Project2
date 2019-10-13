@@ -21,7 +21,7 @@ export class GridComponent implements OnInit {
   // loginclicked: boolean = false;
   loggedin: boolean = false;
 
-  timeLimitInMinutes = 10;  //the amount of minutes before a thread is inactive
+  timeLimitInMinutes = 5;  //the amount of minutes before a thread is inactive
 
   showLogin() {
     this.userService.loginclicked = true; 
