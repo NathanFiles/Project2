@@ -6,6 +6,7 @@
     </div>
     <div class="box" id="rightbox">
         <app-replies></app-replies>
-        <app-create-reply></app-create-reply>
+        <app-create-reply *ngIf="active === 1"></app-create-reply>
+        <p *ngIf="active != 1">This thread has been archived due to inactivity.</p>
     </div>
 </div>

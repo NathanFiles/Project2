@@ -21,6 +21,10 @@ export class LoginComponent implements OnInit {
     this.responseText = localStorage.getItem('responseText');
   }
 
+  hideLogin() {
+    this.userService.loginclicked = false;
+  }
+
   login() {
     this.userService.login(this.username, this.password).subscribe(
       (response) => {

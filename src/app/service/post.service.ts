@@ -102,7 +102,7 @@ export class PostService {
   loadReplies(p_id :number) {
     this.getReplies(p_id).subscribe(
       (response) => {
-        console.log(response);
+        // console.log(response);
         this.activereplies = response;
       },
       () => {

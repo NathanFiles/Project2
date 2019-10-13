@@ -34,15 +34,22 @@ export class CreateReplyComponent implements OnInit {
     postReply(){
       
       var today = new Date();
-      var time = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
-
+      //force everything to be formatted to two digits
+      var hours = ("0" + today.getHours()).slice(-2);
+      var minutes = ("0" + today.getMinutes()).slice(-2);
+      var seconds = ("0" + today.getSeconds()).slice(-2);
+      var time = hours + ":" + minutes + ":" + seconds;
+      var textIn = " ";
+        if (this.replyText != undefined && this.replyText != null) {
+          textIn = this.replyText;
+      }
 
       this.replyPost = {
         p_id : 999999,
         t_id : this.replyService.threadnum,
         parent_id : this.replyService.activepost.p_id,
         image : "",
-        text : this.replyText,
+        text : textIn,
         timestamp : today.toDateString() + " " + time,
         username : JSON.parse(localStorage.getItem('currentUser')).username
 
